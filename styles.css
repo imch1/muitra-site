@@ -270,7 +270,25 @@ em { font-style: italic; }
   letter-spacing: -1px;
 }
 .get p { color: var(--muted); margin: 18px auto 28px; max-width: 460px; }
-.get-note { margin-top: 18px; font-size: 0.86rem; color: var(--muted-2); }
+.get-email {
+  margin-top: 18px;
+  font-size: 0.98rem;
+  color: var(--muted);
+}
+.get-email a {
+  color: var(--purple-soft);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(154, 144, 249, 0.4);
+}
+.get-email a:hover { color: var(--text); }
+.get-email .copied {
+  margin-left: 8px;
+  font-size: 0.82rem;
+  color: var(--orange);
+  font-weight: 600;
+}
+.get-note { margin-top: 14px; font-size: 0.86rem; color: var(--muted-2); }
 
 /* ---------- Footer ---------- */
 .site-footer {

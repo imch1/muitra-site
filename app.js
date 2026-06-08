@@ -17,6 +17,8 @@ const I18N = {
     "get.title": "Be first to try Muitra",
     "get.body": "We're in closed testing on Android right now. Want in? Reach out and we'll add you to the beta.",
     "get.cta": "Request beta access",
+    "get.emailLabel": "Or email us at",
+    "get.copied": "Copied!",
     "get.note": "A full Google Play launch is on the way.",
     "footer.privacy": "Privacy policy",
     "footer.contact": "Contact",
@@ -46,6 +48,8 @@ const I18N = {
     "get.title": "Soyez parmi les premiers",
     "get.body": "Nous sommes en test fermé sur Android. Envie d'essayer ? Écrivez-nous et on vous ajoute à la bêta.",
     "get.cta": "Demander l'accès bêta",
+    "get.emailLabel": "Ou écrivez-nous à",
+    "get.copied": "Copié !",
     "get.note": "Le lancement complet sur Google Play arrive bientôt.",
     "footer.privacy": "Confidentialité",
     "footer.contact": "Contact",
@@ -75,6 +79,8 @@ const I18N = {
     "get.title": "Sé el primero en probar Muitra",
     "get.body": "Ahora mismo estamos en prueba cerrada en Android. ¿Te apuntas? Escríbenos y te añadimos a la beta.",
     "get.cta": "Solicitar acceso beta",
+    "get.emailLabel": "O escríbenos a",
+    "get.copied": "¡Copiado!",
     "get.note": "El lanzamiento completo en Google Play está en camino.",
     "footer.privacy": "Privacidad",
     "footer.contact": "Contacto",
@@ -186,4 +192,29 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   applyLang(initialLang());
   initCarousel();
+
+  // Beta CTA: always give feedback by copying the address (mailto still fires
+  // for anyone with a mail client configured).
+  const EMAIL = "muitrapp@gmail.com";
+  const copiedMsg = document.getElementById("copiedMsg");
+  function flashCopied() {
+    if (!copiedMsg) return;
+    copiedMsg.hidden = false;
+    clearTimeout(flashCopied._t);
+    flashCopied._t = setTimeout(() => { copiedMsg.hidden = true; }, 2200);
+  }
+  function copyEmail() {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(EMAIL).then(flashCopied, () => {});
+    } else {
+      const t = document.createElement("textarea");
+      t.value = EMAIL; document.body.appendChild(t); t.select();
+      try { document.execCommand("copy"); flashCopied(); } catch (e) {}
+      document.body.removeChild(t);
+    }
+  }
+  ["betaBtn", "betaEmail"].forEach((id) => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener("click", copyEmail);
+  });
 });

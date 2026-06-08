@@ -100,7 +100,12 @@
     <section class="get" id="get">
       <h2 data-i18n="get.title">Be first to try Muitra</h2>
       <p data-i18n="get.body">We're in closed testing on Android right now. Want in? Reach out and we'll add you to the beta.</p>
-      <a class="btn btn-primary btn-lg" href="mailto:muitrapp@gmail.com?subject=Join%20the%20Muitra%20beta" data-i18n="get.cta">Request beta access</a>
+      <a class="btn btn-primary btn-lg" id="betaBtn" href="mailto:muitrapp@gmail.com?subject=Join%20the%20Muitra%20beta" data-i18n="get.cta">Request beta access</a>
+      <p class="get-email">
+        <span data-i18n="get.emailLabel">Or email us at</span>
+        <a href="mailto:muitrapp@gmail.com" id="betaEmail">muitrapp@gmail.com</a>
+        <span class="copied" id="copiedMsg" data-i18n="get.copied" hidden>Copied!</span>
+      </p>
       <p class="get-note" data-i18n="get.note">A full Google Play launch is on the way.</p>
     </section>
   </main>
