@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muitra — Share the chores, fairly and automatically</title>
+  <meta name="description" content="Muitra shares household chores and the mental load between couples and groups — every routine rotates fairly and automatically. For two, or up to six." />
+
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Muitra — Share the chores, fairly and automatically" />
+  <meta property="og:description" content="One home for two, or up to six. Every chore rotates fairly, automatically." />
+  <meta property="og:image" content="https://muitra.com/assets/screens/en/2.png" />
+  <meta property="og:url" content="https://muitra.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="assets/favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/icon.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Muitra home">
+      <img src="assets/icon.png" alt="" class="brand-mark" />
+      <span class="brand-name">Muitra</span>
+    </a>
+
+    <nav class="header-actions">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button data-lang="en" type="button">EN</button>
+        <button data-lang="fr" type="button">FR</button>
+        <button data-lang="es" type="button">ES</button>
+      </div>
+      <a class="btn btn-primary btn-sm" href="#get" data-i18n="nav.cta">Get the app</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- ===== Hero ===== -->
+    <section class="hero">
+      <p class="eyebrow" data-i18n="hero.eyebrow">For couples &amp; roommates</p>
+      <h1 class="hero-title" data-i18n-html="hero.title">
+        Share the chores —<br /><em>fairly, automatically.</em>
+      </h1>
+      <p class="hero-sub" data-i18n="hero.sub">
+        Muitra splits the housework and the mental load between you. Every routine
+        rotates on its own, so nobody has to keep score. One home for two, or up to six.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#get" data-i18n="hero.ctaPrimary">Join the beta</a>
+        <a class="btn btn-ghost" href="#features" data-i18n="hero.ctaSecondary">See how it works</a>
+      </div>
+      <p class="hero-note" data-i18n="hero.note">Coming soon to Google Play · Android</p>
+    </section>
+
+    <!-- ===== Showcase (localized slides) ===== -->
+    <section class="showcase" id="features" aria-label="Screens">
+      <div class="carousel" id="carousel">
+        <button class="car-arrow car-prev" type="button" aria-label="Previous">‹</button>
+        <div class="car-track" id="carTrack">
+          <figure class="slide"><img id="shot1" alt="" loading="lazy" /></figure>
+          <figure class="slide"><img id="shot2" alt="" loading="lazy" /></figure>
+          <figure class="slide"><img id="shot3" alt="" loading="lazy" /></figure>
+          <figure class="slide"><img id="shot4" alt="" loading="lazy" /></figure>
+          <figure class="slide"><img id="shot5" alt="" loading="lazy" /></figure>
+          <figure class="slide"><img id="shot6" alt="" loading="lazy" /></figure>
+        </div>
+        <button class="car-arrow car-next" type="button" aria-label="Next">›</button>
+      </div>
+      <div class="car-dots" id="carDots" aria-hidden="true"></div>
+    </section>
+
+    <!-- ===== Value props ===== -->
+    <section class="values" aria-label="Why Muitra">
+      <article class="value">
+        <span class="value-icon">⚖️</span>
+        <h3 data-i18n="values.fair.title">Fair by default</h3>
+        <p data-i18n="values.fair.body">Each chore takes turns between the people who share it. The app keeps the balance, so you don't have to.</p>
+      </article>
+      <article class="value">
+        <span class="value-icon">🔁</span>
+        <h3 data-i18n="values.auto.title">Set it and forget it</h3>
+        <p data-i18n="values.auto.body">Pick how often a routine repeats and who starts. Muitra schedules the rest and passes the turn automatically.</p>
+      </article>
+      <article class="value">
+        <span class="value-icon">🏠</span>
+        <h3 data-i18n="values.together.title">For two, or for six</h3>
+        <p data-i18n="values.together.body">Built for couples and easily grown for roommates or family — up to six people sharing one home.</p>
+      </article>
+    </section>
+
+    <!-- ===== Get the app ===== -->
+    <section class="get" id="get">
+      <h2 data-i18n="get.title">Be first to try Muitra</h2>
+      <p data-i18n="get.body">We're in closed testing on Android right now. Want in? Reach out and we'll add you to the beta.</p>
+      <a class="btn btn-primary btn-lg" href="mailto:muitrapp@gmail.com?subject=Join%20the%20Muitra%20beta" data-i18n="get.cta">Request beta access</a>
+      <p class="get-note" data-i18n="get.note">A full Google Play launch is on the way.</p>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="foot-brand">
+      <img src="assets/icon.png" alt="" class="brand-mark sm" />
+      <span class="brand-name">Muitra</span>
+    </div>
+    <nav class="foot-links">
+      <a href="https://imch1.github.io/muitra-legal/" data-i18n="footer.privacy">Privacy policy</a>
+      <a href="mailto:muitrapp@gmail.com" data-i18n="footer.contact">Contact</a>
+    </nav>
+    <p class="foot-copy">© <span id="year"></span> Muitra</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
