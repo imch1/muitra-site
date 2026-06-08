@@ -2,6 +2,8 @@
 const I18N = {
   en: {
     "nav.cta": "Get the app",
+    "nav.how": "How it works",
+    "footer.how": "How it works",
     "hero.eyebrow": "For couples & roommates",
     "hero.title": "Share the chores —<br /><em>fairly, automatically.</em>",
     "hero.sub": "Muitra splits the housework and the mental load between you. Every routine rotates on its own, so nobody has to keep score. One home for two, or up to six.",
@@ -33,6 +35,8 @@ const I18N = {
   },
   fr: {
     "nav.cta": "Obtenir l'appli",
+    "nav.how": "Comment ça marche",
+    "footer.how": "Comment ça marche",
     "hero.eyebrow": "Pour les couples et colocs",
     "hero.title": "Partagez les tâches —<br /><em>équitablement, automatiquement.</em>",
     "hero.sub": "Muitra répartit le ménage et la charge mentale entre vous. Chaque routine tourne toute seule, plus besoin de compter les points. Un foyer à deux, ou jusqu'à six.",
@@ -64,6 +68,8 @@ const I18N = {
   },
   es: {
     "nav.cta": "Obtener la app",
+    "nav.how": "Cómo funciona",
+    "footer.how": "Cómo funciona",
     "hero.eyebrow": "Para parejas y compañeros de piso",
     "hero.title": "Reparte las tareas —<br /><em>de forma justa, automáticamente.</em>",
     "hero.sub": "Muitra reparte las tareas del hogar y la carga mental entre vosotros. Cada rutina rota sola, así nadie tiene que llevar la cuenta. Un hogar para dos, o hasta seis.",

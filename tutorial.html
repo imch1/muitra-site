@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1b1533" />
+  <title>How Muitra works</title>
+  <meta name="description" content="A quick tour of Muitra — how shared chores take turns fairly and automatically between everyone at home." />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Muitra home">
+      <img src="assets/icon.png" alt="" class="brand-mark" />
+      <span class="brand-name">Muitra</span>
+    </a>
+    <nav class="header-actions">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button data-lang="en" type="button">EN</button>
+        <button data-lang="fr" type="button">FR</button>
+        <button data-lang="es" type="button">ES</button>
+      </div>
+      <a class="btn btn-primary btn-sm" href="index.html#get" data-i18n="nav.cta">Get the app</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="tut-hero">
+      <p class="eyebrow" data-i18n="tut.eyebrow">The quick tour</p>
+      <h1 class="tut-title" data-i18n="tut.title">How Muitra works</h1>
+      <p class="tut-sub" data-i18n="tut.sub">A shared home runs on small habits. Here's the whole idea in seven short steps.</p>
+    </section>
+
+    <div class="tut-steps">
+      <!-- 1 intro -->
+      <article class="step">
+        <div class="step-text">
+          <span class="step-num">1</span>
+          <span class="step-emoji">🏠</span>
+          <h2 data-i18n="tutorial.intro_title">A shared home, one list.</h2>
+          <p data-i18n="tutorial.intro_body">In Muitra, tasks take turns between everyone at home. Here's the quick tour.</p>
+        </div>
+        <figure class="step-shot"><img id="t1" alt="" loading="lazy" /></figure>
+      </article>
+
+      <!-- 2 turns -->
+      <article class="step">
+        <div class="step-text">
+          <span class="step-num">2</span>
+          <span class="step-emoji">✅</span>
+          <h2 data-i18n="tutorial.turns_title">Whose turn?</h2>
+          <p data-i18n="tutorial.turns_body">Today shows what's yours. Tap to complete — and the turn passes to whoever's next.</p>
+        </div>
+        <figure class="step-shot"><img id="t2" alt="" loading="lazy" /></figure>
+      </article>
+
+      <!-- 3 help (no shot) -->
+      <article class="step step-solo">
+        <div class="step-text">
+          <span class="step-num">3</span>
+          <span class="step-emoji">🤝</span>
+          <h2 data-i18n="tutorial.help_title">Got their back.</h2>
+          <p data-i18n="tutorial.help_body">Help finishes someone else's task for them. Cover hands one over for later.</p>
+        </div>
+      </article>
+
+      <!-- 4 plan -->
+      <article class="step">
+        <div class="step-text">
+          <span class="step-num">4</span>
+          <span class="step-emoji">➕</span>
+          <h2 data-i18n="tutorial.plan_title">Build your rhythm.</h2>
+          <p data-i18n="tutorial.plan_body">Tap + to add a task and how often it repeats. Start a custom task's name with an emoji to spot it at a glance in the Calendar.</p>
+        </div>
+        <figure class="step-shot"><img id="t3" alt="" loading="lazy" /></figure>
+      </article>
+
+      <!-- 5 cal -->
+      <article class="step">
+        <div class="step-text">
+          <span class="step-num">5</span>
+          <span class="step-emoji">🗓️</span>
+          <h2 data-i18n="tutorial.cal_title">Two ways to look ahead.</h2>
+          <p data-i18n="tutorial.cal_body">Tap Week for a day-by-day agenda, or Month for the whole picture at a glance — each task colored by who's on it.</p>
+        </div>
+        <figure class="step-shot"><img id="t4" alt="" loading="lazy" /></figure>
+      </article>
+
+      <!-- 6 fair -->
+      <article class="step">
+        <div class="step-text">
+          <span class="step-num">6</span>
+          <span class="step-emoji">⚖️</span>
+          <h2 data-i18n="tutorial.fair_title">Always fair.</h2>
+          <p data-i18n="tutorial.fair_body">Muitra simply keeps turns balanced — just the two of you, or a whole household, each with their own color.</p>
+        </div>
+        <figure class="step-shot"><img id="t5" alt="" loading="lazy" /></figure>
+      </article>
+
+      <!-- 7 done (no shot) -->
+      <article class="step step-solo step-done">
+        <div class="step-text">
+          <span class="step-num">7</span>
+          <span class="step-emoji">🎉</span>
+          <h2 data-i18n="tutorial.done_title">You're all set.</h2>
+          <p data-i18n="tutorial.done_body">That's the tour. Open Today and let your home run itself.</p>
+        </div>
+      </article>
+    </div>
+
+    <section class="get">
+      <h2 data-i18n="tut.ctaTitle">Ready to try it?</h2>
+      <p data-i18n="tut.ctaBody">Muitra is in closed testing on Android. Request access and we'll add you to the beta.</p>
+      <a class="btn btn-primary btn-lg" href="index.html#get" data-i18n="tut.ctaButton">Get the app</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="foot-brand">
+      <img src="assets/icon.png" alt="" class="brand-mark sm" />
+      <span class="brand-name">Muitra</span>
+    </div>
+    <nav class="foot-links">
+      <a href="index.html" data-i18n="footer.home">Home</a>
+      <a href="https://imch1.github.io/muitra-legal/" data-i18n="footer.privacy">Privacy policy</a>
+      <a href="mailto:muitrapp@gmail.com" data-i18n="footer.contact">Contact</a>
+    </nav>
+    <p class="foot-copy">© <span id="year"></span> Muitra</p>
+  </footer>
+
+  <script src="tutorial.js"></script>
+</body>
+</html>

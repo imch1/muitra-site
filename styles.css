@@ -61,6 +61,13 @@ em { font-style: italic; }
 }
 
 .header-actions { display: flex; align-items: center; gap: 14px; }
+.nav-link {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+.nav-link:hover { color: var(--text); }
 
 .lang-switch {
   display: inline-flex;
@@ -311,9 +318,97 @@ em { font-style: italic; }
 .foot-links a:hover { color: var(--purple-soft); }
 .foot-copy { color: var(--muted-2); font-size: 0.86rem; }
 
+/* ---------- Tutorial page ---------- */
+.tut-hero {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: clamp(48px, 9vw, 90px) clamp(20px, 5vw, 32px) clamp(10px, 3vw, 24px);
+  text-align: center;
+}
+.tut-title {
+  font-family: "Space Grotesk", "DM Sans", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.1rem, 5.5vw, 3.4rem);
+  line-height: 1.06;
+  letter-spacing: -1.2px;
+}
+.tut-sub {
+  margin: 20px auto 0;
+  max-width: 520px;
+  color: var(--muted);
+  font-size: clamp(1rem, 2.3vw, 1.12rem);
+}
+
+.tut-steps {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: clamp(24px, 5vw, 50px) clamp(20px, 5vw, 32px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(40px, 7vw, 84px);
+}
+.step {
+  display: grid;
+  grid-template-columns: 1fr minmax(240px, 300px);
+  gap: clamp(24px, 5vw, 56px);
+  align-items: center;
+}
+.step:nth-child(even) .step-text { order: 2; }
+.step:nth-child(even) .step-shot { order: 1; }
+.step-solo { grid-template-columns: 1fr; max-width: 620px; margin: 0 auto; text-align: center; }
+
+.step-text { position: relative; }
+.step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--purple);
+  color: #fff;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 8px 20px -8px rgba(124, 111, 247, 0.8);
+}
+.step-emoji { font-size: 1.8rem; display: inline-block; margin-left: 12px; vertical-align: middle; }
+.step-text h2 {
+  font-family: "Space Grotesk", "DM Sans", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3.2vw, 2rem);
+  letter-spacing: -0.6px;
+  margin: 16px 0 10px;
+}
+.step-text p { color: var(--muted); font-size: 1.05rem; max-width: 46ch; }
+.step-solo .step-text p { margin-inline: auto; }
+
+.step-shot img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 22px;
+  border: 1px solid var(--surface-line);
+  box-shadow: 0 24px 60px -24px rgba(0, 0, 0, 0.7);
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 760px) {
   .values { grid-template-columns: 1fr; }
   .car-arrow { display: none; }
   .brand-name { font-size: 1.25rem; }
+  .nav-link { display: none; }
+  .step { grid-template-columns: 1fr; text-align: center; gap: 22px; }
+  .step:nth-child(even) .step-text,
+  .step:nth-child(even) .step-shot { order: initial; }
+  .step-text p { margin-inline: auto; }
+  .step-shot { max-width: 260px; margin: 0 auto; }
+}
+
+@media (max-width: 480px) {
+  .site-header { padding: 12px 16px; gap: 10px; }
+  .header-actions { gap: 10px; }
+  .btn-sm { padding: 8px 13px; font-size: 0.85rem; }
+  .lang-switch button { padding: 5px 9px; font-size: 0.78rem; }
+  .hero-cta .btn { width: 100%; }
 }
