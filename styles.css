@@ -404,11 +404,3 @@ em { font-style: italic; }
   .step-text p { margin-inline: auto; }
   .step-shot { max-width: 260px; margin: 0 auto; }
 }
-
-@media (max-width: 480px) {
-  .site-header { padding: 12px 16px; gap: 10px; }
-  .header-actions { gap: 10px; }
-  .btn-sm { padding: 8px 13px; font-size: 0.85rem; }
-  .lang-switch button { padding: 5px 9px; font-size: 0.78rem; }
-  .hero-cta .btn { width: 100%; }
-}
