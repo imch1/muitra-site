@@ -440,19 +440,17 @@ body.menu-open .menu-panel {
   gap: clamp(40px, 7vw, 84px);
 }
 .step {
-  display: grid;
-  grid-template-columns: 1fr minmax(240px, 300px);
-  gap: clamp(24px, 5vw, 56px);
+  display: flex;
   align-items: center;
+  gap: clamp(24px, 5vw, 56px);
 }
-/* Image always sits in the fixed-width track (same size every step);
-   even rows just mirror the columns so the image alternates sides. */
-.step .step-text { grid-column: 1; }
-.step .step-shot { grid-column: 2; }
-.step:nth-child(even) { grid-template-columns: minmax(240px, 300px) 1fr; }
-.step:nth-child(even) .step-shot { grid-column: 1; }
-.step:nth-child(even) .step-text { grid-column: 2; }
-.step-solo { grid-template-columns: 1fr; max-width: 620px; margin: 0 auto; text-align: center; }
+/* The screenshot is a fixed width so every step matches; the text fills
+   the rest. Even steps reverse the row so the image alternates sides
+   while staying perfectly aligned beside its text. */
+.step-text { flex: 1 1 auto; min-width: 0; }
+.step-shot { flex: 0 0 clamp(240px, 26vw, 300px); }
+.step:nth-child(even) { flex-direction: row-reverse; }
+.step-solo { justify-content: center; max-width: 620px; margin: 0 auto; text-align: center; }
 
 .step-text { position: relative; }
 .step-num {
@@ -496,11 +494,7 @@ body.menu-open .menu-panel {
   .brand-name { font-size: 1.25rem; }
   .nav-link { display: none; }
   .step,
-  .step:nth-child(even) { grid-template-columns: 1fr; text-align: center; gap: 22px; }
-  .step .step-text,
-  .step .step-shot,
-  .step:nth-child(even) .step-text,
-  .step:nth-child(even) .step-shot { grid-column: 1; }
+  .step:nth-child(even) { flex-direction: column; text-align: center; gap: 22px; }
   .step-text p { margin-inline: auto; }
-  .step-shot { max-width: 260px; margin: 0 auto; }
+  .step-shot { flex: none; width: 100%; max-width: 260px; margin: 0 auto; }
 }
