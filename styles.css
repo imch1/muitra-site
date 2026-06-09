@@ -338,6 +338,8 @@ body.menu-open .menu-panel {
   grid-template-columns: repeat(3, 1fr);
   gap: 22px;
 }
+/* 2x2 variant (Mission page — 4 cards) */
+.values.grid-2 { grid-template-columns: repeat(2, 1fr); max-width: 800px; }
 .value {
   background: var(--surface);
   border: 1px solid var(--surface-line);
@@ -484,7 +486,7 @@ body.menu-open .menu-panel {
 
 /* ---------- Responsive ---------- */
 @media (max-width: 760px) {
-  .values { grid-template-columns: 1fr; }
+  .values, .values.grid-2 { grid-template-columns: 1fr; }
   .car-arrow { display: none; }
   .brand-name { font-size: 1.25rem; }
   .nav-link { display: none; }
