@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css?v=20260609" />
+  <link rel="stylesheet" href="styles.css?v=20260609b" />
 </head>
 <body>
   <header class="site-header">
@@ -37,10 +37,10 @@
   <div class="menu-overlay" id="menuOverlay" hidden></div>
   <aside class="menu-panel" id="menuPanel" aria-hidden="true">
     <nav class="menu-nav" aria-label="Site menu">
-      <a href="/tutorial" class="current" aria-current="page" data-i18n="menu.how"><span class="menu-ico">📖</span>How it works</a>
-      <a href="/mission" data-i18n="menu.mission"><span class="menu-ico">✨</span>Mission</a>
-      <a href="https://imch1.github.io/muitra-legal/" data-i18n="menu.privacy"><span class="menu-ico">🔒</span>Privacy policy</a>
-      <a href="mailto:muitrapp@gmail.com" data-i18n="menu.contact"><span class="menu-ico">✉️</span>Contact</a>
+      <a href="/tutorial" class="current" aria-current="page"><span class="menu-ico">📖</span><span data-i18n="menu.how">How it works</span></a>
+      <a href="/mission"><span class="menu-ico">✨</span><span data-i18n="menu.mission">Mission</span></a>
+      <a href="https://imch1.github.io/muitra-legal/"><span class="menu-ico">🔒</span><span data-i18n="menu.privacy">Privacy policy</span></a>
+      <a href="mailto:muitrapp@gmail.com" id="menuContact"><span class="menu-ico">✉️</span><span data-i18n="menu.contact">Contact</span><span class="menu-copied" data-i18n="menu.copied" hidden>Copied!</span></a>
     </nav>
     <div class="menu-lang">
       <span class="menu-lang-label" data-i18n="menu.language">Language</span>
@@ -156,6 +156,6 @@
     <p class="foot-copy">© <span id="year"></span> Muitra</p>
   </footer>
 
-  <script src="tutorial.js?v=20260609"></script>
+  <script src="tutorial.js?v=20260609b"></script>
 </body>
 </html>

@@ -6,6 +6,7 @@ const I18N = {
     "menu.mission": "Mission",
     "menu.privacy": "Privacy policy",
     "menu.contact": "Contact",
+    "menu.copied": "Copied!",
     "menu.language": "Language",
     "tut.eyebrow": "The quick tour",
     "tut.title": "How Muitra works",
@@ -44,6 +45,7 @@ const I18N = {
     "menu.mission": "Mission",
     "menu.privacy": "Confidentialité",
     "menu.contact": "Contact",
+    "menu.copied": "Copié !",
     "menu.language": "Langue",
     "tut.eyebrow": "L'aperçu rapide",
     "tut.title": "Comment fonctionne Muitra",
@@ -82,6 +84,7 @@ const I18N = {
     "menu.mission": "Misión",
     "menu.privacy": "Privacidad",
     "menu.contact": "Contacto",
+    "menu.copied": "¡Copiado!",
     "menu.language": "Idioma",
     "tut.eyebrow": "El recorrido rápido",
     "tut.title": "Cómo funciona Muitra",
@@ -169,10 +172,26 @@ function initMenu() {
   );
   if (overlay) overlay.addEventListener("click", () => setOpen(false));
   panel.querySelectorAll(".menu-nav a").forEach((a) =>
-    a.addEventListener("click", () => setOpen(false))
+    a.addEventListener("click", () => { if (a.id !== "menuContact") setOpen(false); })
   );
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") setOpen(false);
+  });
+}
+
+function initContact() {
+  const link = document.getElementById("menuContact");
+  if (!link) return;
+  const flag = link.querySelector(".menu-copied");
+  link.addEventListener("click", () => {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText("muitrapp@gmail.com").catch(() => {});
+    }
+    if (flag) {
+      flag.hidden = false;
+      clearTimeout(link._t);
+      link._t = setTimeout(() => { flag.hidden = true; }, 2000);
+    }
   });
 }
 
@@ -183,4 +202,5 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   applyLang(initialLang());
   initMenu();
+  initContact();
 });

@@ -173,6 +173,7 @@ body.menu-open .menu-panel {
 .menu-nav a:hover { background: var(--surface); }
 .menu-nav a.current { color: var(--purple-soft); }
 .menu-ico { font-size: 1.05rem; line-height: 1; width: 1.2em; text-align: center; }
+.menu-copied { margin-left: auto; font-size: 0.8rem; font-weight: 600; color: var(--orange); }
 .menu-lang {
   margin-top: 6px;
   padding: 13px 13px 6px;
