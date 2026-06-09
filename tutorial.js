@@ -2,6 +2,11 @@
 const I18N = {
   en: {
     "nav.cta": "Get the app",
+    "menu.how": "How it works",
+    "menu.mission": "Mission",
+    "menu.privacy": "Privacy policy",
+    "menu.contact": "Contact",
+    "menu.language": "Language",
     "tut.eyebrow": "The quick tour",
     "tut.title": "How Muitra works",
     "tut.sub": "A shared home runs on small habits. Here's the whole idea in seven short steps.",
@@ -35,6 +40,11 @@ const I18N = {
   },
   fr: {
     "nav.cta": "Obtenir l'appli",
+    "menu.how": "Comment ça marche",
+    "menu.mission": "Mission",
+    "menu.privacy": "Confidentialité",
+    "menu.contact": "Contact",
+    "menu.language": "Langue",
     "tut.eyebrow": "L'aperçu rapide",
     "tut.title": "Comment fonctionne Muitra",
     "tut.sub": "Un foyer partagé tient à de petites habitudes. Voici toute l'idée en sept étapes.",
@@ -68,6 +78,11 @@ const I18N = {
   },
   es: {
     "nav.cta": "Obtener la app",
+    "menu.how": "Cómo funciona",
+    "menu.mission": "Misión",
+    "menu.privacy": "Privacidad",
+    "menu.contact": "Contacto",
+    "menu.language": "Idioma",
     "tut.eyebrow": "El recorrido rápido",
     "tut.title": "Cómo funciona Muitra",
     "tut.sub": "Un hogar compartido se mueve con pequeños hábitos. Aquí está toda la idea en siete pasos.",
@@ -138,10 +153,34 @@ function initialLang() {
   return SUPPORTED.includes(nav) ? nav : "en";
 }
 
+function initMenu() {
+  const toggle = document.getElementById("menuToggle");
+  const panel = document.getElementById("menuPanel");
+  const overlay = document.getElementById("menuOverlay");
+  if (!toggle || !panel) return;
+  function setOpen(open) {
+    document.body.classList.toggle("menu-open", open);
+    toggle.setAttribute("aria-expanded", String(open));
+    panel.setAttribute("aria-hidden", String(!open));
+    if (overlay) overlay.hidden = !open;
+  }
+  toggle.addEventListener("click", () =>
+    setOpen(!document.body.classList.contains("menu-open"))
+  );
+  if (overlay) overlay.addEventListener("click", () => setOpen(false));
+  panel.querySelectorAll(".menu-nav a").forEach((a) =>
+    a.addEventListener("click", () => setOpen(false))
+  );
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") setOpen(false);
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("year").textContent = new Date().getFullYear();
   document.querySelectorAll(".lang-switch button").forEach((b) => {
     b.addEventListener("click", () => applyLang(b.dataset.lang));
   });
   applyLang(initialLang());
+  initMenu();
 });

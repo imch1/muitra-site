@@ -37,15 +37,32 @@
     </a>
 
     <nav class="header-actions">
-      <a class="nav-link" href="/tutorial" data-i18n="nav.how">How it works</a>
+      <a class="btn btn-primary btn-sm" href="#get" data-i18n="nav.cta">Get the app</a>
+      <button class="menu-toggle" id="menuToggle" type="button"
+              aria-label="Menu" aria-expanded="false" aria-controls="menuPanel">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ===== Menu ===== -->
+  <div class="menu-overlay" id="menuOverlay" hidden></div>
+  <aside class="menu-panel" id="menuPanel" aria-hidden="true">
+    <nav class="menu-nav" aria-label="Site menu">
+      <a href="/tutorial" data-i18n="menu.how"><span class="menu-ico">📖</span>How it works</a>
+      <a href="/mission" data-i18n="menu.mission"><span class="menu-ico">✨</span>Mission</a>
+      <a href="https://imch1.github.io/muitra-legal/" data-i18n="menu.privacy"><span class="menu-ico">🔒</span>Privacy policy</a>
+      <a href="mailto:muitrapp@gmail.com" data-i18n="menu.contact"><span class="menu-ico">✉️</span>Contact</a>
+    </nav>
+    <div class="menu-lang">
+      <span class="menu-lang-label" data-i18n="menu.language">Language</span>
       <div class="lang-switch" role="group" aria-label="Language">
         <button data-lang="en" type="button">EN</button>
         <button data-lang="fr" type="button">FR</button>
         <button data-lang="es" type="button">ES</button>
       </div>
-      <a class="btn btn-primary btn-sm" href="#get" data-i18n="nav.cta">Get the app</a>
-    </nav>
-  </header>
+    </div>
+  </aside>
 
   <main id="top">
     <!-- ===== Hero ===== -->

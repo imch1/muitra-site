@@ -3,6 +3,11 @@ const I18N = {
   en: {
     "nav.cta": "Get the app",
     "nav.how": "How it works",
+    "menu.how": "How it works",
+    "menu.mission": "Mission",
+    "menu.privacy": "Privacy policy",
+    "menu.contact": "Contact",
+    "menu.language": "Language",
     "footer.how": "How it works",
     "hero.eyebrow": "For couples & roommates",
     "hero.title": "Share the chores —<br /><em>fairly, automatically.</em>",
@@ -36,6 +41,11 @@ const I18N = {
   fr: {
     "nav.cta": "Obtenir l'appli",
     "nav.how": "Comment ça marche",
+    "menu.how": "Comment ça marche",
+    "menu.mission": "Mission",
+    "menu.privacy": "Confidentialité",
+    "menu.contact": "Contact",
+    "menu.language": "Langue",
     "footer.how": "Comment ça marche",
     "hero.eyebrow": "Pour les couples et colocs",
     "hero.title": "Partagez les tâches —<br /><em>équitablement, automatiquement.</em>",
@@ -69,6 +79,11 @@ const I18N = {
   es: {
     "nav.cta": "Obtener la app",
     "nav.how": "Cómo funciona",
+    "menu.how": "Cómo funciona",
+    "menu.mission": "Misión",
+    "menu.privacy": "Privacidad",
+    "menu.contact": "Contacto",
+    "menu.language": "Idioma",
     "footer.how": "Cómo funciona",
     "hero.eyebrow": "Para parejas y compañeros de piso",
     "hero.title": "Reparte las tareas —<br /><em>de forma justa, automáticamente.</em>",
@@ -146,6 +161,32 @@ function initialLang() {
   return SUPPORTED.includes(nav) ? nav : "en";
 }
 
+/* ---------- Menu (hamburger panel) ---------- */
+function initMenu() {
+  const toggle = document.getElementById("menuToggle");
+  const panel = document.getElementById("menuPanel");
+  const overlay = document.getElementById("menuOverlay");
+  if (!toggle || !panel) return;
+  function setOpen(open) {
+    document.body.classList.toggle("menu-open", open);
+    toggle.setAttribute("aria-expanded", String(open));
+    panel.setAttribute("aria-hidden", String(!open));
+    if (overlay) overlay.hidden = !open;
+  }
+  toggle.addEventListener("click", () =>
+    setOpen(!document.body.classList.contains("menu-open"))
+  );
+  if (overlay) overlay.addEventListener("click", () => setOpen(false));
+  // Close after picking a destination, but keep the panel open when only
+  // switching language inside it.
+  panel.querySelectorAll(".menu-nav a").forEach((a) =>
+    a.addEventListener("click", () => setOpen(false))
+  );
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") setOpen(false);
+  });
+}
+
 /* ---------- Carousel ---------- */
 function initCarousel() {
   const track = document.getElementById("carTrack");
@@ -197,6 +238,7 @@ document.addEventListener("DOMContentLoaded", () => {
     b.addEventListener("click", () => applyLang(b.dataset.lang));
   });
   applyLang(initialLang());
+  initMenu();
   initCarousel();
 
   // Beta CTA: always give feedback by copying the address (mailto still fires
