@@ -211,44 +211,68 @@ function initContact() {
 function initCarousel() {
   const track = document.getElementById("carTrack");
   const dotsBox = document.getElementById("carDots");
-  const slides = Array.from(track.children);
 
-  // build dots
-  slides.forEach((_, i) => {
-    const d = document.createElement("button");
-    d.type = "button";
-    d.addEventListener("click", () => {
-      slides[i].scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
-    });
-    dotsBox.appendChild(d);
-  });
-  const dots = Array.from(dotsBox.children);
+  // The CSS shows 1 or 2 slides per "screen" depending on viewport width
+  // (see the 640px breakpoint in styles.css), so each screen is always
+  // exactly one track.clientWidth wide. Dots represent those screens
+  // ("pages"), not individual screenshots.
+  function pageCount() {
+    return Math.max(1, Math.round(track.scrollWidth / track.clientWidth));
+  }
+  function currentPage() {
+    return Math.round(track.scrollLeft / track.clientWidth);
+  }
+  function goToPage(p, behavior) {
+    const max = pageCount() - 1;
+    p = Math.min(max, Math.max(0, p));
+    // CSS scroll-snap fights a JS-driven smooth scroll: the snap engine
+    // re-evaluates mid-animation and can cut it short one page too early.
+    // Suspend snapping for the duration of the scroll, then restore it.
+    track.style.scrollSnapType = "none";
+    const restoreSnap = () => { track.style.scrollSnapType = ""; };
+    track.scrollTo({ left: p * track.clientWidth, behavior });
+    clearTimeout(track._snapRestoreT);
+    if ("onscrollend" in window) {
+      track.addEventListener("scrollend", restoreSnap, { once: true });
+    } else {
+      track._snapRestoreT = setTimeout(restoreSnap, behavior === "smooth" ? 500 : 0);
+    }
+  }
 
-  function currentIndex() {
-    const center = track.scrollLeft + track.clientWidth / 2;
-    let best = 0, bestDist = Infinity;
-    slides.forEach((s, i) => {
-      const c = s.offsetLeft + s.offsetWidth / 2;
-      const dist = Math.abs(c - center);
-      if (dist < bestDist) { bestDist = dist; best = i; }
+  let dots = [];
+  function buildDots() {
+    dotsBox.innerHTML = "";
+    dots = Array.from({ length: pageCount() }, (_, p) => {
+      const d = document.createElement("button");
+      d.type = "button";
+      d.addEventListener("click", () => goToPage(p, "smooth"));
+      dotsBox.appendChild(d);
+      return d;
     });
-    return best;
   }
   function syncDots() {
-    const idx = currentIndex();
-    dots.forEach((d, i) => d.classList.toggle("active", i === idx));
+    const p = currentPage();
+    dots.forEach((d, i) => d.classList.toggle("active", i === p));
   }
-  track.addEventListener("scroll", () => window.requestAnimationFrame(syncDots), { passive: true });
-
-  function step(dir) {
-    const idx = currentIndex();
-    const next = Math.min(slides.length - 1, Math.max(0, idx + dir));
-    slides[next].scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
-  }
-  document.querySelector(".car-prev").addEventListener("click", () => step(-1));
-  document.querySelector(".car-next").addEventListener("click", () => step(1));
-
+  buildDots();
   syncDots();
+
+  track.addEventListener("scroll", () => window.requestAnimationFrame(syncDots), { passive: true });
+  document.querySelector(".car-prev").addEventListener("click", () => goToPage(currentPage() - 1, "smooth"));
+  document.querySelector(".car-next").addEventListener("click", () => goToPage(currentPage() + 1, "smooth"));
+
+  // Slides-per-page changes at the 640px breakpoint, so the page count and
+  // dot layout need to be recomputed on resize.
+  let resizeT;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeT);
+    resizeT = setTimeout(() => {
+      const p = currentPage();
+      buildDots();
+      goToPage(p, "auto");
+      syncDots();
+    }, 150);
+  });
 }
 
 /* ---------- Boot ---------- */
