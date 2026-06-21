@@ -415,6 +415,10 @@ body.menu-open .menu-panel {
   font-size: 0.92rem;
 }
 .foot-links a:hover { color: var(--purple-soft); }
+.foot-social { display: flex; gap: 16px; }
+.foot-social a { color: var(--muted); display: inline-flex; }
+.foot-social a:hover { color: var(--purple-soft); }
+.foot-social svg { width: 20px; height: 20px; fill: currentColor; }
 .foot-copy { color: var(--muted-2); font-size: 0.86rem; }
 
 /* ---------- Tutorial page ---------- */
