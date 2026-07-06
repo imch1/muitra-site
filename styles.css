@@ -376,6 +376,12 @@ body.menu-open .menu-panel {
   letter-spacing: -1px;
 }
 .get p { color: var(--muted); margin: 18px auto 28px; max-width: 460px; }
+.store-links {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
 .get-email {
   margin-top: 18px;
   font-size: 0.98rem;
