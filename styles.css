@@ -427,6 +427,91 @@ body.menu-open .menu-panel {
 .foot-social svg { width: 20px; height: 20px; fill: currentColor; }
 .foot-copy { color: var(--muted-2); font-size: 0.86rem; }
 
+/* ---------- Invite page ---------- */
+.invite-page {
+  min-height: 100vh;
+}
+.invite-shell {
+  min-height: 100vh;
+  width: min(100%, 720px);
+  margin: 0 auto;
+  padding: clamp(28px, 7vw, 56px) clamp(20px, 5vw, 32px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 28px;
+}
+.invite-brand {
+  align-self: center;
+}
+.invite-card {
+  background: var(--surface);
+  border: 1px solid var(--surface-line);
+  border-radius: 18px;
+  padding: clamp(28px, 6vw, 44px);
+  text-align: center;
+  box-shadow: 0 24px 80px -36px rgba(0, 0, 0, 0.75);
+}
+.invite-title {
+  font-family: "Space Grotesk", "DM Sans", system-ui, sans-serif;
+  font-size: clamp(2rem, 8vw, 3.1rem);
+  line-height: 1.05;
+  letter-spacing: -1px;
+  margin-bottom: 16px;
+}
+.invite-sub {
+  color: var(--muted);
+  max-width: 500px;
+  margin: 0 auto 28px;
+}
+.invite-code-wrap {
+  background: rgba(0, 0, 0, 0.16);
+  border: 1px solid rgba(244, 162, 97, 0.45);
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 24px;
+  display: grid;
+  gap: 8px;
+  justify-items: center;
+}
+.invite-code-label {
+  color: var(--muted-2);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+.invite-code {
+  color: var(--orange);
+  font-family: "Space Grotesk", "DM Sans", system-ui, sans-serif;
+  font-size: clamp(2rem, 9vw, 3rem);
+  letter-spacing: 0.18em;
+  overflow-wrap: anywhere;
+}
+.invite-copy {
+  border: 0;
+  background: transparent;
+  color: var(--purple-soft);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+.invite-copy:disabled {
+  cursor: default;
+  color: var(--muted-2);
+}
+.invite-copied {
+  color: var(--orange);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+.invite-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
 /* ---------- Tutorial page ---------- */
 .tut-hero {
   max-width: 720px;

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1b1533" />
+  <title>Muitra invite</title>
+  <meta name="description" content="Open this Muitra invite to join a shared home." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Join a home on Muitra" />
+  <meta property="og:description" content="Open Muitra or use the invite code to join a shared home." />
+  <meta property="og:image" content="https://muitra.com/assets/icon-512.png" />
+  <meta property="og:url" content="https://muitra.com/invite/" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png" />
+  <link rel="manifest" href="../site.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css?v=20260610a" />
+</head>
+<body class="invite-page">
+  <main class="invite-shell">
+    <a class="brand invite-brand" href="/" aria-label="Muitra home">
+      <img src="../assets/icon.png" alt="" class="brand-mark" />
+      <span class="brand-name">Muitra</span>
+    </a>
+
+    <section class="invite-card" aria-labelledby="inviteTitle">
+      <p class="eyebrow">Home invite</p>
+      <h1 id="inviteTitle" class="invite-title">Join this home on Muitra</h1>
+      <p class="invite-sub">Open the app to join with this invite. If the app is not installed yet, download it and enter the code below.</p>
+
+      <div class="invite-code-wrap">
+        <span class="invite-code-label">Invite code</span>
+        <strong class="invite-code" id="inviteCode">------</strong>
+        <button class="invite-copy" id="copyInviteCode" type="button">Copy code</button>
+        <span class="invite-copied" id="inviteCopied" hidden>Copied</span>
+      </div>
+
+      <div class="invite-actions">
+        <a class="btn btn-primary btn-lg" id="openAppBtn" href="muitra://join">Open Muitra</a>
+        <a class="btn btn-ghost btn-lg" href="https://apps.apple.com/us/search?term=Muitra" target="_blank" rel="noopener">App Store</a>
+        <a class="btn btn-ghost btn-lg" href="https://play.google.com/store/apps/details?id=com.imch.muitra" target="_blank" rel="noopener">Google Play</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="../invite.js?v=20260710a"></script>
+</body>
+</html>

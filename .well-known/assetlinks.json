@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.imch.muitra",
+      "sha256_cert_fingerprints": [
+        "51:63:6C:02:3F:9E:F6:F0:78:CD:14:8E:9B:12:6F:67:25:0F:5F:7E:D1:D6:82:26:C1:AE:78:E0:32:12:DD:04"
+      ]
+    }
+  }
+]
