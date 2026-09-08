@@ -3,6 +3,7 @@ const I18N = {
   en: {
     "nav.cta": "Get the app",
     "nav.how": "How it works",
+    "nav.features": "See the app",
     "menu.how": "How it works",
     "menu.mission": "Mission",
     "menu.privacy": "Privacy policy",
@@ -16,6 +17,20 @@ const I18N = {
     "hero.ctaPrimary": "Download on the App Store",
     "hero.ctaSecondary": "Get it on Google Play",
     "hero.note": "Available now on iPhone and Android",
+    "hero.previewLabel": "Muitra app preview",
+    "hero.floatTurn": "Turns rotate",
+    "hero.floatAuto": "Automatically",
+    "hero.floatCalm": "No keeping score",
+    "hero.floatTogether": "Just a calmer home",
+    "proof.label": "Muitra at a glance",
+    "proof.people": "people per home",
+    "proof.automatic": "automatic rotation",
+    "proof.available": "available now",
+    "showcase.eyebrow": "Made for real homes",
+    "showcase.title": "Everything clear. Nobody keeping count.",
+    "showcase.body": "See today’s turns, plan the week, and let every routine pass itself on.",
+    "values.eyebrow": "A better household rhythm",
+    "values.title": "Fairness you can feel, without the admin.",
     "values.fair.title": "Fair by default",
     "values.fair.body": "Each chore takes turns between the people who share it. The app keeps the balance, so you don't have to.",
     "values.auto.title": "Set it and forget it",
@@ -23,6 +38,7 @@ const I18N = {
     "values.together.title": "For two, or for six",
     "values.together.body": "Built for couples and easily grown for roommates or family — up to six people sharing one home.",
     "get.title": "Get Muitra today",
+    "get.eyebrow": "Ready when your home is",
     "get.body": "Muitra is live on the App Store and Google Play. Download it and set up your first home in seconds.",
     "get.ctaApple": "Download on the App Store",
     "get.ctaGoogle": "Get it on Google Play",
@@ -43,6 +59,7 @@ const I18N = {
   fr: {
     "nav.cta": "Obtenir l'appli",
     "nav.how": "Comment ça marche",
+    "nav.features": "Voir l’appli",
     "menu.how": "Comment ça marche",
     "menu.mission": "Mission",
     "menu.privacy": "Confidentialité",
@@ -56,6 +73,20 @@ const I18N = {
     "hero.ctaPrimary": "Telecharger sur l'App Store",
     "hero.ctaSecondary": "Obtenir sur Google Play",
     "hero.note": "Disponible maintenant sur iPhone et Android",
+    "hero.previewLabel": "Aperçu de l’application Muitra",
+    "hero.floatTurn": "Les tours alternent",
+    "hero.floatAuto": "Automatiquement",
+    "hero.floatCalm": "Plus besoin de compter",
+    "hero.floatTogether": "Un foyer plus serein",
+    "proof.label": "Muitra en un coup d’œil",
+    "proof.people": "personnes par foyer",
+    "proof.automatic": "rotation automatique",
+    "proof.available": "disponible maintenant",
+    "showcase.eyebrow": "Pensé pour la vraie vie",
+    "showcase.title": "Tout est clair. Personne ne tient les comptes.",
+    "showcase.body": "Voyez les tours du jour, organisez la semaine et laissez chaque routine passer toute seule.",
+    "values.eyebrow": "Un meilleur rythme à la maison",
+    "values.title": "Une équité qui se ressent, sans la gestion.",
     "values.fair.title": "Équitable par défaut",
     "values.fair.body": "Chaque tâche passe d'une personne à l'autre. L'appli garde l'équilibre à votre place.",
     "values.auto.title": "Réglez et oubliez",
@@ -63,6 +94,7 @@ const I18N = {
     "values.together.title": "À deux, ou à six",
     "values.together.body": "Pensé pour les couples et facile à agrandir pour les colocs ou la famille — jusqu'à six personnes dans un même foyer.",
     "get.title": "Téléchargez Muitra dès maintenant",
+    "get.eyebrow": "Prêt quand votre foyer l’est",
     "get.body": "Muitra est disponible sur l'App Store et Google Play. Telechargez l'appli et creez votre premier foyer en quelques secondes.",
     "get.ctaApple": "Telecharger sur l'App Store",
     "get.ctaGoogle": "Obtenir sur Google Play",
@@ -83,6 +115,7 @@ const I18N = {
   es: {
     "nav.cta": "Obtener la app",
     "nav.how": "Cómo funciona",
+    "nav.features": "Ver la app",
     "menu.how": "Cómo funciona",
     "menu.mission": "Misión",
     "menu.privacy": "Privacidad",
@@ -96,6 +129,20 @@ const I18N = {
     "hero.ctaPrimary": "Descargar en App Store",
     "hero.ctaSecondary": "Consiguela en Google Play",
     "hero.note": "Ya disponible en iPhone y Android",
+    "hero.previewLabel": "Vista previa de la aplicación Muitra",
+    "hero.floatTurn": "Los turnos rotan",
+    "hero.floatAuto": "Automáticamente",
+    "hero.floatCalm": "Sin llevar la cuenta",
+    "hero.floatTogether": "Un hogar más tranquilo",
+    "proof.label": "Muitra de un vistazo",
+    "proof.people": "personas por hogar",
+    "proof.automatic": "rotación automática",
+    "proof.available": "disponible ahora",
+    "showcase.eyebrow": "Hecho para hogares reales",
+    "showcase.title": "Todo claro. Nadie lleva la cuenta.",
+    "showcase.body": "Mira los turnos de hoy, organiza la semana y deja que cada rutina pase sola.",
+    "values.eyebrow": "Un ritmo mejor en casa",
+    "values.title": "Una justicia que se nota, sin gestión.",
     "values.fair.title": "Justo por defecto",
     "values.fair.body": "Cada tarea va pasando entre quienes la comparten. La app mantiene el equilibrio por ti.",
     "values.auto.title": "Configúralo y olvídate",
@@ -103,6 +150,7 @@ const I18N = {
     "values.together.title": "Para dos, o para seis",
     "values.together.body": "Pensado para parejas y fácil de ampliar para compañeros de piso o familia — hasta seis personas en un mismo hogar.",
     "get.title": "Consigue Muitra hoy",
+    "get.eyebrow": "Listo cuando vuestro hogar lo esté",
     "get.body": "Muitra ya esta disponible en App Store y Google Play. Descargala y crea tu primer hogar en segundos.",
     "get.ctaApple": "Descargar en App Store",
     "get.ctaGoogle": "Consiguela en Google Play",
@@ -140,6 +188,10 @@ function applyLang(lang) {
     const key = el.getAttribute("data-i18n-html");
     if (dict[key]) el.innerHTML = dict[key];
   });
+  document.querySelectorAll("[data-i18n-aria]").forEach((el) => {
+    const key = el.getAttribute("data-i18n-aria");
+    if (dict[key]) el.setAttribute("aria-label", dict[key]);
+  });
 
   // screenshots + alt text
   for (let i = 1; i <= 6; i++) {
@@ -148,6 +200,11 @@ function applyLang(lang) {
       img.src = `assets/screens/${lang}/${i}.png`;
       img.alt = dict.alt[i - 1] || "";
     }
+  }
+  const heroShot = document.getElementById("heroShot");
+  if (heroShot) {
+    heroShot.src = `assets/screens/${lang}/2.png`;
+    heroShot.alt = dict.alt[1] || "";
   }
 
   // active state on switch
@@ -278,6 +335,44 @@ function initCarousel() {
   });
 }
 
+/* ---------- Motion (progressive enhancement) ---------- */
+function initMotion() {
+  document.body.classList.add("motion-ready");
+  const reveals = document.querySelectorAll(".reveal");
+  if (!("IntersectionObserver" in window)) {
+    reveals.forEach((el) => el.classList.add("is-visible"));
+  } else {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -35px" });
+    reveals.forEach((el) => observer.observe(el));
+  }
+
+  const visual = document.querySelector(".hero-visual");
+  if (!visual || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const layers = visual.querySelectorAll("[data-float-layer]");
+  visual.addEventListener("pointermove", (event) => {
+    const rect = visual.getBoundingClientRect();
+    const x = (event.clientX - rect.left) / rect.width - 0.5;
+    const y = (event.clientY - rect.top) / rect.height - 0.5;
+    layers.forEach((layer) => {
+      const depth = Number(layer.dataset.floatLayer || 1);
+      layer.style.setProperty("--float-x", `${x * depth * 7}px`);
+      layer.style.setProperty("--float-y", `${y * depth * 7}px`);
+    });
+  });
+  visual.addEventListener("pointerleave", () => {
+    layers.forEach((layer) => {
+      layer.style.removeProperty("--float-x");
+      layer.style.removeProperty("--float-y");
+    });
+  });
+}
+
 /* ---------- Boot ---------- */
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("year").textContent = new Date().getFullYear();
@@ -288,6 +383,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initMenu();
   initContact();
   initCarousel();
+  initMotion();
 
   // Beta CTA: always give feedback by copying the address (mailto still fires
   // for anyone with a mail client configured).
