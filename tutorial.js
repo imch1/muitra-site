@@ -2,6 +2,8 @@
 const I18N = {
   en: {
     "nav.cta": "Get the app",
+    "nav.features": "See the app",
+    "nav.how": "How it works",
     "menu.how": "How it works",
     "menu.mission": "Mission",
     "menu.privacy": "Privacy policy",
@@ -41,6 +43,8 @@ const I18N = {
   },
   fr: {
     "nav.cta": "Obtenir l'appli",
+    "nav.features": "Voir l’appli",
+    "nav.how": "Comment ça marche",
     "menu.how": "Comment ça marche",
     "menu.mission": "Mission",
     "menu.privacy": "Confidentialité",
@@ -80,6 +84,8 @@ const I18N = {
   },
   es: {
     "nav.cta": "Obtener la app",
+    "nav.features": "Ver la app",
+    "nav.how": "Cómo funciona",
     "menu.how": "Cómo funciona",
     "menu.mission": "Misión",
     "menu.privacy": "Privacidad",

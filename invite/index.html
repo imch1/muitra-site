@@ -18,9 +18,39 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../styles.css?v=20260610a" />
+  <link rel="stylesheet" href="../styles.css?v=20260908b" />
 </head>
 <body class="invite-page">
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Muitra home">
+      <img src="../assets/icon.png" alt="" class="brand-mark" />
+      <span class="brand-name">Muitra</span>
+    </a>
+    <nav class="header-actions">
+      <div class="desktop-nav" aria-label="Primary navigation">
+        <a href="/#features">See the app</a>
+        <a href="/tutorial">How it works</a>
+        <a href="/mission">Mission</a>
+      </div>
+      <a class="btn btn-primary btn-sm" href="/#get">Get the app</a>
+      <button class="menu-toggle" id="menuToggle" type="button"
+              aria-label="Menu" aria-expanded="false" aria-controls="menuPanel">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <div class="menu-overlay" id="menuOverlay" hidden></div>
+  <aside class="menu-panel" id="menuPanel" aria-hidden="true">
+    <nav class="menu-nav" aria-label="Site menu">
+      <a href="/#features"><span class="menu-ico">📱</span><span>See the app</span></a>
+      <a href="/tutorial"><span class="menu-ico">📖</span><span>How it works</span></a>
+      <a href="/mission"><span class="menu-ico">✨</span><span>Mission</span></a>
+      <a href="https://imch1.github.io/muitra-legal/"><span class="menu-ico">🔒</span><span>Privacy policy</span></a>
+      <a href="mailto:muitrapp@gmail.com"><span class="menu-ico">✉️</span><span>Contact</span></a>
+    </nav>
+  </aside>
+
   <main class="invite-shell">
     <a class="brand invite-brand" href="/" aria-label="Muitra home">
       <img src="../assets/icon.png" alt="" class="brand-mark" />
@@ -47,6 +77,6 @@
     </section>
   </main>
 
-  <script src="../invite.js?v=20260710a"></script>
+  <script src="../invite.js?v=20260908b"></script>
 </body>
 </html>

@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css?v=20260610a" />
+  <link rel="stylesheet" href="styles.css?v=20260908b" />
 </head>
 <body>
   <header class="site-header">
@@ -25,6 +25,11 @@
       <span class="brand-name">Muitra</span>
     </a>
     <nav class="header-actions">
+      <div class="desktop-nav" aria-label="Primary navigation">
+        <a href="/#features" data-i18n="nav.features">See the app</a>
+        <a href="/tutorial" class="current" data-i18n="nav.how">How it works</a>
+        <a href="/mission" data-i18n="menu.mission">Mission</a>
+      </div>
       <a class="btn btn-primary btn-sm" href="/#get" data-i18n="nav.cta">Get the app</a>
       <button class="menu-toggle" id="menuToggle" type="button"
               aria-label="Menu" aria-expanded="false" aria-controls="menuPanel">
@@ -145,6 +150,6 @@
     <p class="foot-copy">© <span id="year"></span> Muitra</p>
   </footer>
 
-  <script src="tutorial.js?v=20260610a"></script>
+  <script src="tutorial.js?v=20260908b"></script>
 </body>
 </html>

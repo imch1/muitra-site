@@ -1,4 +1,29 @@
 (function () {
+  function initMenu() {
+    var toggle = document.getElementById("menuToggle");
+    var panel = document.getElementById("menuPanel");
+    var overlay = document.getElementById("menuOverlay");
+    if (!toggle || !panel) return;
+
+    function setOpen(open) {
+      document.body.classList.toggle("menu-open", open);
+      toggle.setAttribute("aria-expanded", String(open));
+      panel.setAttribute("aria-hidden", String(!open));
+      if (overlay) overlay.hidden = !open;
+    }
+
+    toggle.addEventListener("click", function () {
+      setOpen(!document.body.classList.contains("menu-open"));
+    });
+    if (overlay) overlay.addEventListener("click", function () { setOpen(false); });
+    panel.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () { setOpen(false); });
+    });
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") setOpen(false);
+    });
+  }
+
   function inviteCodeFromLocation() {
     var params = new URLSearchParams(window.location.search);
     var queryCode = params.get("code");
@@ -36,6 +61,8 @@
   var copyButton = document.getElementById("copyInviteCode");
   var copiedNode = document.getElementById("inviteCopied");
   var openAppButton = document.getElementById("openAppBtn");
+
+  initMenu();
 
   if (codeNode) codeNode.textContent = code || "------";
   if (openAppButton) {
