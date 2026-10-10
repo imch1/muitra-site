@@ -1,38 +1,21 @@
-# Muitra — landing site
+# Muitra website
 
-Static one-page marketing site for muitra.com. No build step: plain HTML/CSS/JS.
+Static marketing site for [muitra.com](https://muitra.com), deployed from this repository to GitHub Pages. No server or build step runs on the host.
 
-## Structure
-- `index.html` — markup
-- `styles.css` — styles (brand: purple #7C6FF7 / orange, DM Sans + Instrument Serif)
-- `app.js` — EN/FR/ES translations, language auto-detect + switcher, screenshot carousel
-- `assets/icon.png`, `assets/favicon.png` — logo
-- `assets/screens/{en,fr,es}/1..6.png` — localized store slides (the showcase)
-- `CNAME` — custom domain for GitHub Pages (remove if hosting on Cloudflare Pages)
+## Edit and regenerate
 
-## Preview locally
-Just open `index.html` in a browser, or serve it:
-```
-python -m http.server 8080   # then visit http://localhost:8080
-```
+- Edit the English HTML structure in `templates/*.template` and existing page translations in `content/*.json`.
+- Edit the three audience page translations and SEO metadata in `scripts/build-site.mjs`.
+- Edit shared behavior in `scripts/runtime-source.js` and styling in `styles.css`.
+- Run `node scripts/build-site.mjs` from this directory. Commit the generated HTML, `site.js`, `robots.txt` and `sitemap.xml` together with their sources.
+- Run `node scripts/check-site.mjs` to validate the generated pages and local links.
 
-## Deploy — Cloudflare Pages (recommended)
-1. Push this folder to a GitHub repo (e.g. `imch1/muitra-site`).
-2. Cloudflare dashboard → Pages → Connect to Git → pick the repo.
-3. Build command: *(none)* · Output directory: `/` (root).
-4. After first deploy, add custom domain `muitra.com` (Pages → Custom domains).
-5. Point the domain's nameservers at Cloudflare (one-time, at your registrar).
-   - With Cloudflare you can delete the `CNAME` file (that file is a GitHub Pages thing).
+The English homepage, tutorial and mission retain their existing public URLs. French and Spanish pages live under `/fr/` and `/es/`. The language links point to equivalent pages. The invite fallback and `404.html` remain outside the sitemap and are marked `noindex`.
 
-## Deploy — GitHub Pages (alternative)
-1. Push to a repo, e.g. `imch1/muitra-site`, branch `main`.
-2. Repo → Settings → Pages → Source: `main` / root.
-3. Keep the `CNAME` file (it sets the custom domain).
-4. At your registrar, add DNS records for `muitra.com` per GitHub's docs
-   (4 A records to GitHub's IPs + a `www` CNAME).
+## Preview
 
-## TODO before launch
-- Confirm the privacy-policy URL in `index.html` footer
-  (currently `https://imch1.github.io/muitra-legal/`).
-- Swap the "Coming soon" CTA for a real Google Play badge once the app is public.
-- Optional: buy `muitra.app` and 301-redirect it to `muitra.com`.
+Run `node scripts/serve.mjs`, then open `http://127.0.0.1:8080/` and check English, French and Spanish navigation. Opening generated HTML directly with `file://` will not resolve root-relative assets.
+
+## Deploy
+
+Push the reviewed generated files to the GitHub Pages source branch. Keep `CNAME` with `muitra.com`; check the live canonical URLs, sitemap and invite flow after deployment. If Google Search Console is verified for the domain, submit `https://muitra.com/sitemap.xml` and monitor indexing and search queries there.

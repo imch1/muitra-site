@@ -1,6 +1,5 @@
-/* Mission page — EN / FR / ES (Spanish stays informal: tú / vosotros) */
-const I18N = {
-  en: {
+{
+  "en": {
     "nav.cta": "Get the app",
     "nav.features": "See the app",
     "nav.how": "How it works",
@@ -28,7 +27,7 @@ const I18N = {
     "footer.privacy": "Privacy policy",
     "footer.contact": "Contact"
   },
-  fr: {
+  "fr": {
     "nav.cta": "Obtenir l'appli",
     "nav.features": "Voir l’appli",
     "nav.how": "Comment ça marche",
@@ -56,7 +55,7 @@ const I18N = {
     "footer.privacy": "Confidentialité",
     "footer.contact": "Contact"
   },
-  es: {
+  "es": {
     "nav.cta": "Obtener la app",
     "nav.features": "Ver la app",
     "nav.how": "Cómo funciona",
@@ -84,79 +83,4 @@ const I18N = {
     "footer.privacy": "Privacidad",
     "footer.contact": "Contacto"
   }
-};
-
-const SUPPORTED = ["en", "fr", "es"];
-
-function applyLang(lang) {
-  if (!SUPPORTED.includes(lang)) lang = "en";
-  const dict = I18N[lang];
-  document.documentElement.lang = lang;
-
-  document.querySelectorAll("[data-i18n]").forEach((el) => {
-    const key = el.getAttribute("data-i18n");
-    if (dict[key]) el.textContent = dict[key];
-  });
-
-  document.querySelectorAll(".lang-switch button").forEach((b) => {
-    b.classList.toggle("active", b.dataset.lang === lang);
-  });
-  try { localStorage.setItem("muitra_lang", lang); } catch (e) {}
 }
-
-function initialLang() {
-  let saved = null;
-  try { saved = localStorage.getItem("muitra_lang"); } catch (e) {}
-  if (saved && SUPPORTED.includes(saved)) return saved;
-  const nav = (navigator.language || "en").slice(0, 2).toLowerCase();
-  return SUPPORTED.includes(nav) ? nav : "en";
-}
-
-function initMenu() {
-  const toggle = document.getElementById("menuToggle");
-  const panel = document.getElementById("menuPanel");
-  const overlay = document.getElementById("menuOverlay");
-  if (!toggle || !panel) return;
-  function setOpen(open) {
-    document.body.classList.toggle("menu-open", open);
-    toggle.setAttribute("aria-expanded", String(open));
-    panel.setAttribute("aria-hidden", String(!open));
-    if (overlay) overlay.hidden = !open;
-  }
-  toggle.addEventListener("click", () =>
-    setOpen(!document.body.classList.contains("menu-open"))
-  );
-  if (overlay) overlay.addEventListener("click", () => setOpen(false));
-  panel.querySelectorAll(".menu-nav a").forEach((a) =>
-    a.addEventListener("click", () => { if (a.id !== "menuContact") setOpen(false); })
-  );
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") setOpen(false);
-  });
-}
-
-function initContact() {
-  const link = document.getElementById("menuContact");
-  if (!link) return;
-  const flag = link.querySelector(".menu-copied");
-  link.addEventListener("click", () => {
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText("muitrapp@gmail.com").catch(() => {});
-    }
-    if (flag) {
-      flag.hidden = false;
-      clearTimeout(link._t);
-      link._t = setTimeout(() => { flag.hidden = true; }, 2000);
-    }
-  });
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("year").textContent = new Date().getFullYear();
-  document.querySelectorAll(".lang-switch button").forEach((b) => {
-    b.addEventListener("click", () => applyLang(b.dataset.lang));
-  });
-  applyLang(initialLang());
-  initMenu();
-  initContact();
-});
