@@ -48,7 +48,7 @@ const I18N = {
     "footer.privacy": "Privacy policy",
     "footer.contact": "Contact",
     "alt": [
-      "Set up in seconds — create a home for a couple or a group of up to six.",
+      "Set up in seconds — create a solo, couple, or group home.",
       "The Today screen showing whose turn each chore is, rotating automatically.",
       "Add a routine in a tap — set how often it repeats and who starts.",
       "The week view showing who does what, and when.",
@@ -104,7 +104,7 @@ const I18N = {
     "footer.privacy": "Confidentialité",
     "footer.contact": "Contact",
     "alt": [
-      "Configuration en quelques secondes — créez un foyer pour un couple ou un groupe de six.",
+      "Configuration en quelques secondes — créez un foyer solo, en couple ou en groupe.",
       "L'écran Aujourd'hui montre à qui le tour de chaque tâche, qui tourne automatiquement.",
       "Ajoutez une routine en un geste — réglez la fréquence et qui commence.",
       "La vue de la semaine : qui fait quoi, et quand.",
@@ -160,7 +160,7 @@ const I18N = {
     "footer.privacy": "Privacidad",
     "footer.contact": "Contacto",
     "alt": [
-      "Configúralo en segundos — crea un hogar para una pareja o un grupo de hasta seis.",
+      "Configúralo en segundos — crea un hogar solo, en pareja o en grupo.",
       "La pantalla de Hoy muestra de quién es el turno de cada tarea, rotando solo.",
       "Añade una rutina con un toque — elige cada cuánto se repite y quién empieza.",
       "La vista de la semana: quién hace qué, y cuándo.",
