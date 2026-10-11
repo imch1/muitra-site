@@ -12,6 +12,8 @@ Static marketing site for [muitra.com](https://muitra.com), deployed from this r
 
 The English homepage, tutorial and mission retain their existing public URLs. French and Spanish pages live under `/fr/` and `/es/`. The language links point to equivalent pages. The invite fallback and `404.html` remain outside the sitemap and are marked `noindex`.
 
+On English pages, the site uses the saved `muitra_lang` choice or the browser language to open the corresponding French or Spanish page. Visiting a localized page or using the language switch saves that choice. Direct links to localized pages remain on their requested language. Run `node scripts/check-language.mjs` to check this behavior.
+
 ## Preview
 
 Run `node scripts/serve.mjs`, then open `http://127.0.0.1:8080/` and check English, French and Spanish navigation. Opening generated HTML directly with `file://` will not resolve root-relative assets.

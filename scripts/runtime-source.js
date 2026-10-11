@@ -1,3 +1,41 @@
+/* ---------- Language ---------- */
+const supportedLanguages = ["en", "fr", "es"];
+const languageStorageKey = "muitra_lang";
+
+function saveLanguage(lang) {
+  try { localStorage.setItem(languageStorageKey, lang); } catch (e) {}
+}
+
+function preferredLanguage() {
+  try {
+    const saved = localStorage.getItem(languageStorageKey);
+    if (supportedLanguages.includes(saved)) return saved;
+  } catch (e) {}
+  const browser = (navigator.language || "en").slice(0, 2).toLowerCase();
+  return supportedLanguages.includes(browser) ? browser : "en";
+}
+
+function choosePageLanguage() {
+  const current = document.documentElement.lang;
+  if (current !== "en") {
+    if (supportedLanguages.includes(current)) saveLanguage(current);
+    return;
+  }
+
+  const preferred = preferredLanguage();
+  if (preferred === "en") {
+    saveLanguage("en");
+    return;
+  }
+
+  const pathname = window.location.pathname;
+  if (!["/", "/tutorial", "/mission", "/solo/", "/couples/", "/roommates/"].includes(pathname)) return;
+  const pagePath = pathname === "/" ? "/" : `${pathname.replace(/\/$/, "")}/`;
+  window.location.replace(`/${preferred}${pagePath}${window.location.search}${window.location.hash}`);
+}
+
+choosePageLanguage();
+
 /* ---------- Menu (hamburger panel) ---------- */
 function initMenu() {
   const toggle = document.getElementById("menuToggle");
@@ -151,6 +189,9 @@ function initMotion() {
 document.addEventListener('DOMContentLoaded', () => {
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
+  document.querySelectorAll('.lang-switch a[hreflang]').forEach((link) => {
+    link.addEventListener('click', () => saveLanguage(link.hreflang));
+  });
   initMenu();
   initContact();
   if (document.getElementById('carTrack')) initCarousel();

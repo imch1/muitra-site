@@ -23,6 +23,7 @@ for (const page of pages) {
     assert.equal((html.match(/<title>/g) || []).length, 1, `${label} needs one title`);
     assert.match(html, /<meta name="description" content="[^"]+"/, `${label} needs description`);
     assert.match(html, new RegExp(`<link rel="canonical" href="${origin}${urlPath}"`), `${label} canonical`);
+    assert.match(html, /<script src="\/site\.js\?v=20261011lang"><\/script>[\s\S]*?<\/head>/, `${label} needs language selection before the page renders`);
     assert.doesNotMatch(html, /data-i18n|src=""|href=""/, `${label} has unrendered content`);
     if (['solo', 'couples', 'roommates'].includes(page)) {
       const featureSection = html.match(/<section class="values grid-2 audience-values"[\s\S]*?<\/section>/)?.[0];
