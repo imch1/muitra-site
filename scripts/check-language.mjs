@@ -9,7 +9,7 @@ function loadPage({ path = '/', language = 'en', browser = 'en-US', saved, searc
   let redirect;
   let onReady;
   const document = {
-    documentElement: { lang: language },
+    documentElement: { lang: language, dataset: {} },
     body: { classList: { add() {} } },
     addEventListener(event, callback) { if (event === 'DOMContentLoaded') onReady = callback; },
     getElementById() { return null; },
@@ -18,17 +18,20 @@ function loadPage({ path = '/', language = 'en', browser = 'en-US', saved, searc
   };
   const window = { location: { pathname: path, search, hash, replace(url) { redirect = url; } } };
   vm.runInNewContext(source, {
-    document, window,
+    document, window, URLSearchParams,
     navigator: { language: browser },
     localStorage: { getItem(key) { return values.get(key) ?? null; }, setItem(key, value) { values.set(key, value); } },
   });
-  return { redirect, values, onReady };
+  return { redirect, values, onReady, mode: document.documentElement.dataset.achievementMode };
 }
 
 assert.equal(loadPage({ browser: 'fr-FR' }).redirect, '/fr/');
 assert.equal(loadPage({ path: '/solo/', browser: 'es-ES', search: '?from=ad', hash: '#get' }).redirect, '/es/solo/?from=ad#get');
 assert.equal(loadPage({ path: '/mission', browser: 'fr-FR', saved: 'es' }).redirect, '/es/mission/');
 assert.equal(loadPage({ path: '/tutorial', browser: 'fr-FR' }).redirect, '/fr/tutorial/');
+assert.equal(loadPage({ path: '/tutorial', browser: 'fr-FR', search: '?mode=solo', hash: '#achievements' }).redirect, '/fr/tutorial/?mode=solo#achievements');
+assert.equal(loadPage({ path: '/tutorial', search: '?mode=solo' }).mode, 'solo');
+assert.equal(loadPage({ path: '/tutorial', search: '?mode=other' }).mode, 'household');
 assert.equal(loadPage({ browser: 'fr-FR', saved: 'en' }).redirect, undefined);
 assert.equal(loadPage({ browser: 'de-DE' }).redirect, undefined);
 assert.equal(loadPage({ path: '/fr/solo/', language: 'fr', browser: 'es-ES' }).values.get('muitra_lang'), 'fr');
@@ -40,5 +43,18 @@ manual.onReady();
 click();
 assert.equal(manual.values.get('muitra_lang'), 'en');
 assert.equal(loadPage({ browser: 'fr-FR', saved: manual.values.get('muitra_lang') }).redirect, undefined);
+
+let soloClick;
+const soloLink = {
+  hreflang: 'es', href: '/es/tutorial/',
+  getAttribute(name) { return name === 'href' ? this.href : null; },
+  setAttribute(name, value) { if (name === 'href') this.href = value; },
+  addEventListener(event, callback) { if (event === 'click') soloClick = callback; },
+};
+const soloManual = loadPage({ path: '/fr/tutorial/', language: 'fr', search: '?mode=solo', hash: '#achievements', links: [soloLink] });
+soloManual.onReady();
+assert.equal(soloLink.href, '/es/tutorial/?mode=solo#achievements');
+soloClick();
+assert.equal(soloManual.values.get('muitra_lang'), 'es');
 
 console.log('Checked browser detection, saved choice, localized routes and manual switching.');

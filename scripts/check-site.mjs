@@ -23,11 +23,14 @@ for (const page of pages) {
     assert.equal((html.match(/<title>/g) || []).length, 1, `${label} needs one title`);
     assert.match(html, /<meta name="description" content="[^"]+"/, `${label} needs description`);
     assert.match(html, new RegExp(`<link rel="canonical" href="${origin}${urlPath}"`), `${label} canonical`);
-    assert.match(html, /<script src="\/site\.js\?v=20261011lang"><\/script>[\s\S]*?<\/head>/, `${label} needs language selection before the page renders`);
+    const scriptVersion = page === 'tutorial' ? '20261025journey' : '20261011lang';
+    assert.match(html, new RegExp(`<script src="/site\\.js\\?v=${scriptVersion}"><\\/script>[\\s\\S]*?<\\/head>`), `${label} needs language selection before the page renders`);
     assert.doesNotMatch(html, /data-i18n|src=""|href=""/, `${label} has unrendered content`);
     if (page === 'tutorial') {
       assert.match(html, /<section class="badge-guide" id="achievements"/, `${label} is missing the badge guide`);
-      assert.equal((html.match(/class="badge-guide-grid"[\s\S]*?<\/div>/)?.[0].match(/<article>/g) || []).length, 3, `${label} needs three badge explanations`);
+      assert.equal((html.match(/class="badge-timeline"/g) || []).length, 2, `${label} needs solo and household timelines`);
+      assert.equal((html.match(/class="badge-medallion"/g) || []).length, 12, `${label} needs six stops per timeline`);
+      assert.equal((html.match(/<details class="badge-rules">/g) || []).length, 2, `${label} needs mode-specific exact rules`);
       assert.match(html, /70\s?%/, `${label} is missing the balanced-week limit`);
     }
     if (['solo', 'couples', 'roommates'].includes(page)) {

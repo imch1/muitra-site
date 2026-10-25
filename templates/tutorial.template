@@ -12,12 +12,12 @@
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
   <link rel="manifest" href="site.webmanifest" />
 
-  <script src="/site.js?v=20261011lang"></script>
+  <script src="/site.js?v=20261025journey"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css?v=20261010seo3" />
+  <link rel="stylesheet" href="styles.css?v=20261025journey" />
 </head>
 <body>
   <header class="site-header">
@@ -125,21 +125,53 @@
 
     <section class="badge-guide" id="achievements" aria-labelledby="badge-guide-title">
       <p class="eyebrow" data-i18n="badge.eyebrow">Progress</p>
-      <h2 id="badge-guide-title" data-i18n="badge.title">How achievements work</h2>
-      <p class="badge-guide-intro" data-i18n="badge.intro">Achievements celebrate completed tasks and the rhythm you build over time. Your private solo chapter and your household collection are counted separately.</p>
-      <div class="badge-guide-grid">
-        <article>
-          <h3 data-i18n="badge.solo_title">Your solo chapter</h3>
-          <p data-i18n="badge.solo_body">Eligible personal tasks completed while you are the only member count toward solo achievements. Completion milestones are 1, 10, 25, 100, 500 and 1,000 tasks. Rhythm badges count distinct active weeks, so a break does not erase progress.</p>
-        </article>
-        <article>
-          <h3 data-i18n="badge.shared_title">Your household collection</h3>
-          <p data-i18n="badge.shared_body">Shared progress begins when a second member joins. Eligible shared completions count once for the household. Later badges combine completion milestones with balanced weeks.</p>
-        </article>
-        <article>
-          <h3 data-i18n="badge.balanced_title">What is a balanced week?</h3>
-          <p data-i18n="badge.balanced_body">In one household-local Monday-to-Sunday week, at least 4 shared tasks must be completed by at least 2 contributors, with no one doing more than 70%. The week is counted after it ends. Balanced weeks accumulate; they do not have to be consecutive.</p>
-        </article>
+      <h2 id="badge-guide-title" data-i18n="badge.title">A journey worth celebrating</h2>
+      <div class="badge-journey badge-household">
+        <h3 data-i18n="badge.shared_title">Your household collection</h3>
+        <p class="badge-guide-intro" data-i18n="badge.house_intro">Each shared task moves your household forward.</p>
+        <p class="badge-track-label" data-i18n="badge.completion_track">Shared task milestones</p>
+        <ol class="badge-timeline" aria-label="Shared task milestones" data-i18n-aria="badge.completion_track">
+          <li><span class="badge-medallion" aria-hidden="true">✦</span><strong>1</strong><span data-i18n="badge.shared_1">First Shared Step</span></li>
+          <li><span class="badge-medallion" aria-hidden="true">✦</span><strong>10</strong><span data-i18n="badge.shared_10">Team Warm-Up</span></li>
+          <li><span class="badge-medallion" aria-hidden="true">✦</span><strong>25</strong><span data-i18n="badge.shared_25">In Sync</span></li>
+          <li><span class="badge-medallion" aria-hidden="true">✦</span><strong>100</strong><span data-i18n="badge.shared_100">Super Team</span></li>
+          <li><span class="badge-medallion" aria-hidden="true">✦</span><strong>500</strong><span data-i18n="badge.shared_500">Home Champions</span></li>
+          <li><span class="badge-medallion" aria-hidden="true">✦</span><strong data-i18n="badge.milestone_1000">1,000</strong><span data-i18n="badge.shared_1000">Household Legends</span></li>
+        </ol>
+        <p class="badge-track-hint" data-i18n="badge.track_hint">Swipe to explore the milestones</p>
+        <div class="badge-rhythm"><span aria-hidden="true">✧</span><span data-i18n="badge.house_rhythm">Rhythm badges: 1 · 4 · 13 · 26 · 52 balanced weeks</span></div>
+        <div class="badge-formula" aria-label="Balanced week" data-i18n-aria="badge.balanced_title">
+          <span data-i18n="badge.balanced_title">A balanced week</span>
+          <strong>4 <small data-i18n="badge.tasks">tasks</small></strong>
+          <b aria-hidden="true">+</b>
+          <strong>2 <small data-i18n="badge.people">people</small></strong>
+          <b aria-hidden="true">+</b>
+          <strong>≤70% <small data-i18n="badge.max_share">each</small></strong>
+        </div>
+        <details class="badge-rules">
+          <summary data-i18n="badge.exact_rules">See exact rules</summary>
+          <p data-i18n="badge.shared_body">Shared progress begins when a second member joins. Eligible shared completions count once for the household.</p>
+          <p data-i18n="badge.balanced_body">A balanced week has four shared tasks and two contributors, with no one doing more than 70%.</p>
+        </details>
+      </div>
+      <div class="badge-journey badge-solo">
+        <h3 data-i18n="badge.solo_title">Your solo chapter</h3>
+        <p class="badge-guide-intro" data-i18n="badge.solo_intro">Every completed task builds your own rhythm.</p>
+        <p class="badge-track-label" data-i18n="badge.solo_track">Personal task milestones</p>
+        <ol class="badge-timeline" aria-label="Personal task milestones" data-i18n-aria="badge.solo_track">
+          <li><span class="badge-medallion" aria-hidden="true">✦</span><strong>1</strong><span data-i18n="badge.solo_1">First Spark</span></li>
+          <li><span class="badge-medallion" aria-hidden="true">✦</span><strong>10</strong><span data-i18n="badge.solo_10">Finding Your Flow</span></li>
+          <li><span class="badge-medallion" aria-hidden="true">✦</span><strong>25</strong><span data-i18n="badge.solo_25">On a Roll</span></li>
+          <li><span class="badge-medallion" aria-hidden="true">✦</span><strong>100</strong><span data-i18n="badge.solo_100">Home Hero</span></li>
+          <li><span class="badge-medallion" aria-hidden="true">✦</span><strong>500</strong><span data-i18n="badge.solo_500">Task Titan</span></li>
+          <li><span class="badge-medallion" aria-hidden="true">✦</span><strong data-i18n="badge.milestone_1000">1,000</strong><span data-i18n="badge.solo_1000">Mega Maker</span></li>
+        </ol>
+        <p class="badge-track-hint" data-i18n="badge.track_hint">Swipe to explore the milestones</p>
+        <div class="badge-rhythm"><span aria-hidden="true">✧</span><span data-i18n="badge.solo_rhythm">Rhythm badges: 4 · 13 · 26 · 52 active weeks</span></div>
+        <details class="badge-rules">
+          <summary data-i18n="badge.exact_rules">See exact rules</summary>
+          <p data-i18n="badge.solo_body">Personal tasks completed while you are the only member count toward your solo chapter.</p>
+        </details>
       </div>
     </section>
 

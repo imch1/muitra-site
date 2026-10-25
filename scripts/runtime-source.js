@@ -1,6 +1,8 @@
 /* ---------- Language ---------- */
 const supportedLanguages = ["en", "fr", "es"];
 const languageStorageKey = "muitra_lang";
+const achievementMode = new URLSearchParams(window.location.search).get("mode") === "solo" ? "solo" : "household";
+document.documentElement.dataset.achievementMode = achievementMode;
 
 function saveLanguage(lang) {
   try { localStorage.setItem(languageStorageKey, lang); } catch (e) {}
@@ -190,6 +192,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
   document.querySelectorAll('.lang-switch a[hreflang]').forEach((link) => {
+    if (achievementMode === 'solo' && /(^|\/)tutorial\/?$/.test(window.location.pathname)) {
+      link.setAttribute('href', `${link.getAttribute('href')}?mode=solo${window.location.hash || '#achievements'}`);
+    }
     link.addEventListener('click', () => saveLanguage(link.hreflang));
   });
   initMenu();

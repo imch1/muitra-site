@@ -12,7 +12,7 @@ Static marketing site for [muitra.com](https://muitra.com), deployed from this r
 
 The English homepage, tutorial and mission retain their existing public URLs. French and Spanish pages live under `/fr/` and `/es/`. The language links point to equivalent pages. The invite fallback and `404.html` remain outside the sitemap and are marked `noindex`.
 
-The tutorial includes an achievements guide at `#achievements` in each language. The mobile Progress screen and onboarding tutorial link directly to the matching localized section.
+The tutorial includes an achievements guide at `#achievements` in each language. It shows the household journey by default; `?mode=solo#achievements` shows the solo journey. The mobile Progress screen and onboarding tutorial link to the matching localized section and pass Solo mode only for Solo homes. Language switching preserves the selected journey.
 
 On English pages, the site uses the saved `muitra_lang` choice or the browser language to open the corresponding French or Spanish page. Visiting a localized page or using the language switch saves that choice. Direct links to localized pages remain on their requested language. Run `node scripts/check-language.mjs` to check this behavior.
 

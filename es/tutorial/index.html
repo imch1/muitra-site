@@ -24,12 +24,12 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
 
-  <script src="/site.js?v=20261011lang"></script>
+  <script src="/site.js?v=20261025journey"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="/styles.css?v=20261010seo3" />
+  <link rel="stylesheet" href="/styles.css?v=20261025journey" />
 </head>
 <body>
   <header class="site-header">
@@ -133,21 +133,53 @@
 
     <section class="badge-guide" id="achievements" aria-labelledby="badge-guide-title">
       <p class="eyebrow">Progreso</p>
-      <h2 id="badge-guide-title">Cómo funcionan los logros</h2>
-      <p class="badge-guide-intro">Los logros celebran las tareas completadas y el ritmo que construyes con el tiempo. Tu capítulo individual privado y la colección del hogar se cuentan por separado.</p>
-      <div class="badge-guide-grid">
-        <article>
-          <h3>Tu capítulo individual</h3>
-          <p>Las tareas personales válidas completadas cuando eres la única persona del hogar cuentan para los logros individuales. Los hitos son 1, 10, 25, 100, 500 y 1.000 tareas. Los logros de ritmo llegan tras 4, 13, 26 y 52 semanas activas distintas; una pausa no borra tus avances.</p>
-        </article>
-        <article>
-          <h3>La colección del hogar</h3>
+      <h2 id="badge-guide-title">Un camino que celebrar</h2>
+      <div class="badge-journey badge-household">
+        <h3>La colección del hogar</h3>
+        <p class="badge-guide-intro">Cada tarea compartida hace avanzar a vuestro hogar.</p>
+        <p class="badge-track-label">Hitos de tareas compartidas</p>
+        <ol class="badge-timeline" aria-label="Hitos de tareas compartidas">
+          <li><span class="badge-medallion" aria-hidden="true">✦</span><strong>1</strong><span>Primer paso compartido</span></li>
+          <li><span class="badge-medallion" aria-hidden="true">✦</span><strong>10</strong><span>Calentando motores</span></li>
+          <li><span class="badge-medallion" aria-hidden="true">✦</span><strong>25</strong><span>En sintonía</span></li>
+          <li><span class="badge-medallion" aria-hidden="true">✦</span><strong>100</strong><span>Super equipo</span></li>
+          <li><span class="badge-medallion" aria-hidden="true">✦</span><strong>500</strong><span>Campeones del hogar</span></li>
+          <li><span class="badge-medallion" aria-hidden="true">✦</span><strong>1.000</strong><span>Leyendas del hogar</span></li>
+        </ol>
+        <p class="badge-track-hint">Desliza para explorar los hitos</p>
+        <div class="badge-rhythm"><span aria-hidden="true">✧</span><span>Logros de ritmo: 1 · 4 · 13 · 26 · 52 semanas equilibradas</span></div>
+        <div class="badge-formula" aria-label="¿Qué es una semana equilibrada?">
+          <span>¿Qué es una semana equilibrada?</span>
+          <strong>4 <small>tareas</small></strong>
+          <b aria-hidden="true">+</b>
+          <strong>2 <small>personas</small></strong>
+          <b aria-hidden="true">+</b>
+          <strong>≤70% <small>cada uno</small></strong>
+        </div>
+        <details class="badge-rules">
+          <summary>Ver las reglas exactas</summary>
           <p>El progreso compartido empieza cuando se une una segunda persona, y cada tarea compartida válida cuenta una vez. El primer logro requiere 1 tarea. Los siguientes hitos combinan 10, 25, 100, 500 y 1.000 tareas con 1, 1, 4, 13 y 26 semanas equilibradas. Otros logros de ritmo marcan 1, 4, 13, 26 y 52 semanas equilibradas.</p>
-        </article>
-        <article>
-          <h3>¿Qué es una semana equilibrada?</h3>
           <p>En una semana de lunes a domingo según la hora del hogar, deben completarse al menos 4 tareas compartidas por al menos 2 personas, sin que nadie haga más del 70 %. La semana cuenta cuando termina. Las semanas equilibradas se acumulan sin tener que ser consecutivas.</p>
-        </article>
+        </details>
+      </div>
+      <div class="badge-journey badge-solo">
+        <h3>Tu capítulo individual</h3>
+        <p class="badge-guide-intro">Cada tarea completada construye tu propio ritmo.</p>
+        <p class="badge-track-label">Hitos de tareas personales</p>
+        <ol class="badge-timeline" aria-label="Hitos de tareas personales">
+          <li><span class="badge-medallion" aria-hidden="true">✦</span><strong>1</strong><span>Primera chispa</span></li>
+          <li><span class="badge-medallion" aria-hidden="true">✦</span><strong>10</strong><span>A tu ritmo</span></li>
+          <li><span class="badge-medallion" aria-hidden="true">✦</span><strong>25</strong><span>En marcha</span></li>
+          <li><span class="badge-medallion" aria-hidden="true">✦</span><strong>100</strong><span>Héroe del hogar</span></li>
+          <li><span class="badge-medallion" aria-hidden="true">✦</span><strong>500</strong><span>Titán de las tareas</span></li>
+          <li><span class="badge-medallion" aria-hidden="true">✦</span><strong>1.000</strong><span>Gran creador</span></li>
+        </ol>
+        <p class="badge-track-hint">Desliza para explorar los hitos</p>
+        <div class="badge-rhythm"><span aria-hidden="true">✧</span><span>Logros de ritmo: 4 · 13 · 26 · 52 semanas activas</span></div>
+        <details class="badge-rules">
+          <summary>Ver las reglas exactas</summary>
+          <p>Las tareas personales válidas completadas cuando eres la única persona del hogar cuentan para los logros individuales. Los hitos son 1, 10, 25, 100, 500 y 1.000 tareas. Los logros de ritmo llegan tras 4, 13, 26 y 52 semanas activas distintas; una pausa no borra tus avances.</p>
+        </details>
       </div>
     </section>
 
