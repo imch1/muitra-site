@@ -25,6 +25,11 @@ for (const page of pages) {
     assert.match(html, new RegExp(`<link rel="canonical" href="${origin}${urlPath}"`), `${label} canonical`);
     assert.match(html, /<script src="\/site\.js\?v=20261011lang"><\/script>[\s\S]*?<\/head>/, `${label} needs language selection before the page renders`);
     assert.doesNotMatch(html, /data-i18n|src=""|href=""/, `${label} has unrendered content`);
+    if (page === 'tutorial') {
+      assert.match(html, /<section class="badge-guide" id="achievements"/, `${label} is missing the badge guide`);
+      assert.equal((html.match(/class="badge-guide-grid"[\s\S]*?<\/div>/)?.[0].match(/<article>/g) || []).length, 3, `${label} needs three badge explanations`);
+      assert.match(html, /70\s?%/, `${label} is missing the balanced-week limit`);
+    }
     if (['solo', 'couples', 'roommates'].includes(page)) {
       const featureSection = html.match(/<section class="values grid-2 audience-values"[\s\S]*?<\/section>/)?.[0];
       assert.ok(featureSection, `${label} is missing its feature section`);
