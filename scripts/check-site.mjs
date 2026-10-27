@@ -50,6 +50,7 @@ for (const page of pages) {
       assert.equal((html.match(/class="audience-section audience-section-top"/g) || []).length, 1, `${label} repeats its household choices`);
       assert.equal((choices.match(/class="audience-card"/g) || []).length, 3, `${label} needs three household cards`);
       assert.match(choices, new RegExp(`href="${sitePath(page, lang)}" aria-current="page"`), `${label} should mark the current household card`);
+      assert.doesNotMatch(choices, /class="section-heading"/, `${label} repeats the household introduction`);
       assert.doesNotMatch(html, /class="audience-switch"/, `${label} still has plain household links`);
       const featureSection = html.match(/<section class="values grid-2 audience-values"[\s\S]*?<\/section>/)?.[0];
       assert.ok(featureSection, `${label} is missing its feature section`);

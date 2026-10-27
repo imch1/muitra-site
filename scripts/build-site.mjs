@@ -133,9 +133,11 @@ function audienceMain(page, lang) {
 }
 
 function addAudienceLinks(html, lang, page) {
-  const isTop = ['mission', 'solo', 'couples', 'roommates'].includes(page);
+  const isAudience = ['solo', 'couples', 'roommates'].includes(page);
+  const isTop = page === 'mission' || isAudience;
   const links = ['solo', 'couples', 'roommates'].map((kind) => `<a class="audience-card" href="${localPath(kind, lang)}"${kind === page ? ' aria-current="page"' : ''}><span class="audience-card-icon" aria-hidden="true">${audienceIcons[kind]}</span><span class="audience-card-label">${escapeHtml(labels[lang][kind])}</span><span class="audience-card-arrow" aria-hidden="true">→</span></a>`).join('\n        ');
-  const section = `<section class="audience-section${isTop ? ' audience-section-top' : ''}" aria-labelledby="audience-title"><div class="section-heading"><h2 id="audience-title">${escapeHtml(labels[lang].explore)}</h2><p>${escapeHtml(labels[lang].exploreBody)}</p></div><div class="audience-cards">${links}</div></section>`;
+  const heading = isAudience ? '' : `<div class="section-heading"><h2 id="audience-title">${escapeHtml(labels[lang].explore)}</h2><p>${escapeHtml(labels[lang].exploreBody)}</p></div>`;
+  const section = `<section class="audience-section${isTop ? ' audience-section-top' : ''}" ${isAudience ? `aria-label="${escapeHtml(labels[lang].explore)}"` : 'aria-labelledby="audience-title"'}>${heading}<div class="audience-cards">${links}</div></section>`;
   if (page === 'home') return html.replace('    <!-- ===== Get the app ===== -->', `${section}\n    <!-- ===== Get the app ===== -->`);
   return html.replace('    <section class="values grid-2', `    ${section}\n\n    <section class="values grid-2`);
 }
