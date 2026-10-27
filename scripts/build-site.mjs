@@ -113,14 +113,12 @@ function translate(html, dictionary) {
 
 function audienceMain(page, lang) {
   const data = audience[lang][page];
-  const links = ['solo', 'couples', 'roommates'].map((other) => `<a href="${localPath(other, lang)}"${other === page ? ' aria-current="page"' : ''}>${escapeHtml(labels[lang][other])}</a>`).join('\n        ');
   const points = data.points.map(([title, body]) => `<article class="value"><h2>${escapeHtml(title)}</h2><p>${escapeHtml(body)}</p></article>`).join('\n      ');
   return `<main id="top">
     <section class="tut-hero audience-hero">
       <p class="eyebrow">${escapeHtml(data.eyebrow)}</p>
       <h1 class="tut-title">${escapeHtml(data.title)}</h1>
       <p class="tut-sub">${escapeHtml(data.intro)}</p>
-      <div class="audience-switch" aria-label="${escapeHtml(labels[lang].explore)}">${links}</div>
     </section>
     <section class="values grid-2 audience-values" aria-label="${escapeHtml(labels[lang][page])}">${points}</section>
     <section class="get reveal audience-get" id="get">
@@ -135,11 +133,11 @@ function audienceMain(page, lang) {
 }
 
 function addAudienceLinks(html, lang, page) {
-  const links = ['solo', 'couples', 'roommates'].map((kind) => `<a class="audience-card" href="${localPath(kind, lang)}"><span class="audience-card-icon" aria-hidden="true">${audienceIcons[kind]}</span><span class="audience-card-label">${escapeHtml(labels[lang][kind])}</span><span class="audience-card-arrow" aria-hidden="true">→</span></a>`).join('\n        ');
-  const section = `<section class="audience-section${page === 'mission' ? ' audience-section-top' : ''}" aria-labelledby="audience-title"><div class="section-heading"><h2 id="audience-title">${escapeHtml(labels[lang].explore)}</h2><p>${escapeHtml(labels[lang].exploreBody)}</p></div><div class="audience-cards">${links}</div></section>`;
+  const isTop = ['mission', 'solo', 'couples', 'roommates'].includes(page);
+  const links = ['solo', 'couples', 'roommates'].map((kind) => `<a class="audience-card" href="${localPath(kind, lang)}"${kind === page ? ' aria-current="page"' : ''}><span class="audience-card-icon" aria-hidden="true">${audienceIcons[kind]}</span><span class="audience-card-label">${escapeHtml(labels[lang][kind])}</span><span class="audience-card-arrow" aria-hidden="true">→</span></a>`).join('\n        ');
+  const section = `<section class="audience-section${isTop ? ' audience-section-top' : ''}" aria-labelledby="audience-title"><div class="section-heading"><h2 id="audience-title">${escapeHtml(labels[lang].explore)}</h2><p>${escapeHtml(labels[lang].exploreBody)}</p></div><div class="audience-cards">${links}</div></section>`;
   if (page === 'home') return html.replace('    <!-- ===== Get the app ===== -->', `${section}\n    <!-- ===== Get the app ===== -->`);
-  if (page === 'mission') return html.replace('    <section class="values grid-2"', `    ${section}\n\n    <section class="values grid-2"`);
-  return html.replace('  </main>', `    ${section}\n  </main>`);
+  return html.replace('    <section class="values grid-2', `    ${section}\n\n    <section class="values grid-2`);
 }
 
 function build(page, lang) {

@@ -45,8 +45,15 @@ for (const page of pages) {
       assert.equal((choices.match(/class="audience-card-icon"/g) || []).length, 3, `${label} needs an icon for each household choice`);
     }
     if (['solo', 'couples', 'roommates'].includes(page)) {
+      const choices = html.match(/<section class="audience-section audience-section-top"[\s\S]*?<\/section>/)?.[0];
+      assert.ok(choices, `${label} is missing its top household choices`);
+      assert.equal((html.match(/class="audience-section audience-section-top"/g) || []).length, 1, `${label} repeats its household choices`);
+      assert.equal((choices.match(/class="audience-card"/g) || []).length, 3, `${label} needs three household cards`);
+      assert.match(choices, new RegExp(`href="${sitePath(page, lang)}" aria-current="page"`), `${label} should mark the current household card`);
+      assert.doesNotMatch(html, /class="audience-switch"/, `${label} still has plain household links`);
       const featureSection = html.match(/<section class="values grid-2 audience-values"[\s\S]*?<\/section>/)?.[0];
       assert.ok(featureSection, `${label} is missing its feature section`);
+      assert.ok(html.indexOf(choices) < html.indexOf(featureSection), `${label} household cards must precede the features`);
       assert.equal((featureSection.match(/<article class="value">/g) || []).length, 4, `${label} needs four feature cards`);
       assert.match(html, /<a class="btn btn-dark btn-lg" href="https:\/\/play\.google\.com\/store\/apps\/details\?id=com\.imch\.muitra">/, `${label} needs a direct Google Play link`);
     }
