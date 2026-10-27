@@ -4,3 +4,4 @@
 - For the achievement guide linked from the app, use the app's exact badge art for each named milestone and check both completion and rhythm sections before publishing.
 - When a website change is requested for muitra.com, publish the generated site and verify the live URL before reporting it as done.
 - On Solo, Couples, and Roommates pages, show the three household choice cards once, directly below the hero, without repeating introductory copy.
+- Keep the household choice icons visually distinct: one person, a couple, and a house for roommates.
