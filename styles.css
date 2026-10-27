@@ -709,7 +709,26 @@ html[data-achievement-mode="solo"] .badge-solo { display: block; }
   background: radial-gradient(circle at 32% 24%, #ffd2a5, var(--orange) 60%, #a7532e);
   box-shadow: 0 0 0 7px rgba(244, 162, 97, 0.12), 0 12px 32px rgba(90, 40, 26, 0.5);
 }
-.badge-medallion img { display: block; width: 60px; height: 60px; object-fit: contain; }
+.badge-medallion img {
+  display: block;
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  /* The badge PNGs have uneven transparent margins around their artwork. */
+  transform: translate(var(--badge-art-x, 0), var(--badge-art-y, 0));
+}
+.badge-household .badge-timeline li:nth-child(1) { --badge-art-x: -5px; --badge-art-y: -9px; }
+.badge-household .badge-timeline li:nth-child(2) { --badge-art-x: -3px; --badge-art-y: -7px; }
+.badge-household .badge-timeline li:nth-child(3) { --badge-art-y: -9px; }
+.badge-household .badge-timeline li:nth-child(4) { --badge-art-x: 1px; --badge-art-y: -4px; }
+.badge-household .badge-timeline li:nth-child(5) { --badge-art-x: 2px; --badge-art-y: -9px; }
+.badge-household .badge-timeline li:nth-child(6) { --badge-art-x: 4px; --badge-art-y: -5px; }
+.badge-solo .badge-timeline li:nth-child(1) { --badge-art-x: 3px; --badge-art-y: -2px; }
+.badge-solo .badge-timeline li:nth-child(2) { --badge-art-x: 5px; --badge-art-y: -1px; }
+.badge-solo .badge-timeline li:nth-child(3) { --badge-art-x: 4px; --badge-art-y: -7px; }
+.badge-solo .badge-timeline li:nth-child(4) { --badge-art-x: -3px; --badge-art-y: 7px; }
+.badge-solo .badge-timeline li:nth-child(5) { --badge-art-x: -6px; --badge-art-y: 8px; }
+.badge-solo .badge-timeline li:nth-child(6) { --badge-art-x: 1px; --badge-art-y: 8px; }
 .badge-timeline li:hover .badge-medallion { transform: translateY(-4px) scale(1.05); }
 .badge-timeline strong { margin-top: 15px; font-size: 1.45rem; line-height: 1; }
 .badge-timeline li > span:last-child { max-width: 130px; margin-top: 7px; color: var(--muted); font-size: 0.82rem; line-height: 1.25; }
