@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css?v=20261025journey" />
+  <link rel="stylesheet" href="styles.css?v=20261027nav" />
 </head>
 <body>
   <header class="site-header">
@@ -131,15 +131,15 @@
         <p class="badge-guide-intro" data-i18n="badge.house_intro">Each shared task moves your household forward.</p>
         <p class="badge-track-label" data-i18n="badge.completion_track">Shared task milestones</p>
         <ol class="badge-timeline" aria-label="Shared task milestones" data-i18n-aria="badge.completion_track">
-          <li><span class="badge-medallion" aria-hidden="true">✦</span><strong>1</strong><span data-i18n="badge.shared_1">First Shared Step</span></li>
-          <li><span class="badge-medallion" aria-hidden="true">✦</span><strong>10</strong><span data-i18n="badge.shared_10">Team Warm-Up</span></li>
-          <li><span class="badge-medallion" aria-hidden="true">✦</span><strong>25</strong><span data-i18n="badge.shared_25">In Sync</span></li>
-          <li><span class="badge-medallion" aria-hidden="true">✦</span><strong>100</strong><span data-i18n="badge.shared_100">Super Team</span></li>
-          <li><span class="badge-medallion" aria-hidden="true">✦</span><strong>500</strong><span data-i18n="badge.shared_500">Home Champions</span></li>
-          <li><span class="badge-medallion" aria-hidden="true">✦</span><strong data-i18n="badge.milestone_1000">1,000</strong><span data-i18n="badge.shared_1000">Household Legends</span></li>
+          <li><span class="badge-medallion" aria-hidden="true"><img src="/assets/progress/badges/shared_first_step.png" alt="" width="250" height="270" /></span><strong>1</strong><span data-i18n="badge.shared_1">First Shared Step</span></li>
+          <li><span class="badge-medallion" aria-hidden="true"><img src="/assets/progress/badges/shared_team_warmup.png" alt="" width="250" height="270" /></span><strong>10</strong><span data-i18n="badge.shared_10">Team Warm-Up</span></li>
+          <li><span class="badge-medallion" aria-hidden="true"><img src="/assets/progress/badges/shared_in_sync.png" alt="" width="250" height="270" /></span><strong>25</strong><span data-i18n="badge.shared_25">In Sync</span></li>
+          <li><span class="badge-medallion" aria-hidden="true"><img src="/assets/progress/badges/shared_super_team.png" alt="" width="250" height="270" /></span><strong>100</strong><span data-i18n="badge.shared_100">Super Team</span></li>
+          <li><span class="badge-medallion" aria-hidden="true"><img src="/assets/progress/badges/shared_home_champions.png" alt="" width="250" height="270" /></span><strong>500</strong><span data-i18n="badge.shared_500">Home Champions</span></li>
+          <li><span class="badge-medallion" aria-hidden="true"><img src="/assets/progress/badges/shared_household_legends.png" alt="" width="250" height="270" /></span><strong data-i18n="badge.milestone_1000">1,000</strong><span data-i18n="badge.shared_1000">Household Legends</span></li>
         </ol>
         <p class="badge-track-hint" data-i18n="badge.track_hint">Swipe to explore the milestones</p>
-        <div class="badge-rhythm"><span aria-hidden="true">✧</span><span data-i18n="badge.house_rhythm">Rhythm badges: 1 · 4 · 13 · 26 · 52 balanced weeks</span></div>
+        <div class="badge-rhythm"><span class="badge-rhythm-art" aria-hidden="true"><img src="/assets/progress/badges/shared_first_week_together.png" alt="" width="250" height="270" /><img src="/assets/progress/badges/shared_finding_our_rhythm.png" alt="" width="250" height="270" /><img src="/assets/progress/badges/shared_steady_team.png" alt="" width="250" height="270" /><img src="/assets/progress/badges/shared_keepers_of_home.png" alt="" width="250" height="270" /><img src="/assets/progress/badges/shared_home_legends.png" alt="" width="250" height="270" /></span><span data-i18n="badge.house_rhythm">Rhythm badges: 1 · 4 · 13 · 26 · 52 balanced weeks</span></div>
         <div class="badge-formula" aria-label="Balanced week" data-i18n-aria="badge.balanced_title">
           <span data-i18n="badge.balanced_title">A balanced week</span>
           <strong>4 <small data-i18n="badge.tasks">tasks</small></strong>
@@ -159,15 +159,15 @@
         <p class="badge-guide-intro" data-i18n="badge.solo_intro">Every completed task builds your own rhythm.</p>
         <p class="badge-track-label" data-i18n="badge.solo_track">Personal task milestones</p>
         <ol class="badge-timeline" aria-label="Personal task milestones" data-i18n-aria="badge.solo_track">
-          <li><span class="badge-medallion" aria-hidden="true">✦</span><strong>1</strong><span data-i18n="badge.solo_1">First Spark</span></li>
-          <li><span class="badge-medallion" aria-hidden="true">✦</span><strong>10</strong><span data-i18n="badge.solo_10">Finding Your Flow</span></li>
-          <li><span class="badge-medallion" aria-hidden="true">✦</span><strong>25</strong><span data-i18n="badge.solo_25">On a Roll</span></li>
-          <li><span class="badge-medallion" aria-hidden="true">✦</span><strong>100</strong><span data-i18n="badge.solo_100">Home Hero</span></li>
-          <li><span class="badge-medallion" aria-hidden="true">✦</span><strong>500</strong><span data-i18n="badge.solo_500">Task Titan</span></li>
-          <li><span class="badge-medallion" aria-hidden="true">✦</span><strong data-i18n="badge.milestone_1000">1,000</strong><span data-i18n="badge.solo_1000">Mega Maker</span></li>
+          <li><span class="badge-medallion" aria-hidden="true"><img src="/assets/progress/badges/solo_first_spark.png" alt="" width="250" height="270" /></span><strong>1</strong><span data-i18n="badge.solo_1">First Spark</span></li>
+          <li><span class="badge-medallion" aria-hidden="true"><img src="/assets/progress/badges/solo_finding_your_flow.png" alt="" width="250" height="270" /></span><strong>10</strong><span data-i18n="badge.solo_10">Finding Your Flow</span></li>
+          <li><span class="badge-medallion" aria-hidden="true"><img src="/assets/progress/badges/solo_on_a_roll.png" alt="" width="250" height="270" /></span><strong>25</strong><span data-i18n="badge.solo_25">On a Roll</span></li>
+          <li><span class="badge-medallion" aria-hidden="true"><img src="/assets/progress/badges/solo_home_hero.png" alt="" width="250" height="270" /></span><strong>100</strong><span data-i18n="badge.solo_100">Home Hero</span></li>
+          <li><span class="badge-medallion" aria-hidden="true"><img src="/assets/progress/badges/solo_task_titan.png" alt="" width="250" height="270" /></span><strong>500</strong><span data-i18n="badge.solo_500">Task Titan</span></li>
+          <li><span class="badge-medallion" aria-hidden="true"><img src="/assets/progress/badges/solo_mega_maker.png" alt="" width="250" height="270" /></span><strong data-i18n="badge.milestone_1000">1,000</strong><span data-i18n="badge.solo_1000">Mega Maker</span></li>
         </ol>
         <p class="badge-track-hint" data-i18n="badge.track_hint">Swipe to explore the milestones</p>
-        <div class="badge-rhythm"><span aria-hidden="true">✧</span><span data-i18n="badge.solo_rhythm">Rhythm badges: 4 · 13 · 26 · 52 active weeks</span></div>
+        <div class="badge-rhythm"><span class="badge-rhythm-art" aria-hidden="true"><img src="/assets/progress/badges/solo_own_rhythm.png" alt="" width="250" height="270" /><img src="/assets/progress/badges/solo_steady_hand.png" alt="" width="250" height="270" /><img src="/assets/progress/badges/solo_space_keeper.png" alt="" width="250" height="270" /><img src="/assets/progress/badges/solo_master_of_your_space.png" alt="" width="250" height="270" /></span><span data-i18n="badge.solo_rhythm">Rhythm badges: 4 · 13 · 26 · 52 active weeks</span></div>
         <details class="badge-rules">
           <summary data-i18n="badge.exact_rules">See exact rules</summary>
           <p data-i18n="badge.solo_body">Personal tasks completed while you are the only member count toward your solo chapter.</p>

@@ -30,8 +30,19 @@ for (const page of pages) {
       assert.match(html, /<section class="badge-guide" id="achievements"/, `${label} is missing the badge guide`);
       assert.equal((html.match(/class="badge-timeline"/g) || []).length, 2, `${label} needs solo and household timelines`);
       assert.equal((html.match(/class="badge-medallion"/g) || []).length, 12, `${label} needs six stops per timeline`);
+      const badgeArt = [...html.matchAll(/src="(\/assets\/progress\/badges\/[^\"]+\.png)"/g)].map((match) => match[1]);
+      assert.equal(badgeArt.length, 21, `${label} needs every current app achievement illustration`);
+      assert.equal(new Set(badgeArt).size, 21, `${label} repeats an achievement illustration`);
+      assert.doesNotMatch(html, /class="badge-medallion"[^>]*>[✦✧]/, `${label} still uses placeholder stars`);
       assert.equal((html.match(/<details class="badge-rules">/g) || []).length, 2, `${label} needs mode-specific exact rules`);
       assert.match(html, /70\s?%/, `${label} is missing the balanced-week limit`);
+    }
+    if (page === 'mission') {
+      const choices = html.match(/<section class="audience-section audience-section-top"[\s\S]*?<\/section>/)?.[0];
+      assert.ok(choices, `${label} is missing its top household choices`);
+      assert.ok(html.indexOf(choices) < html.indexOf('<section class="values grid-2"'), `${label} household choices must precede the mission values`);
+      assert.equal((choices.match(/class="audience-card"/g) || []).length, 3, `${label} needs three household choices`);
+      assert.equal((choices.match(/class="audience-card-icon"/g) || []).length, 3, `${label} needs an icon for each household choice`);
     }
     if (['solo', 'couples', 'roommates'].includes(page)) {
       const featureSection = html.match(/<section class="values grid-2 audience-values"[\s\S]*?<\/section>/)?.[0];

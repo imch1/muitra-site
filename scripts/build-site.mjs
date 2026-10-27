@@ -13,6 +13,7 @@ const labels = {
   fr: { solo: 'Pour une personne', couples: 'Pour les couples', roommates: 'Pour les colocations', explore: 'Muitra s’adapte à votre foyer', exploreBody: 'Organisez-vous seul, partagez les tâches à deux ou gérez une colocation.', download: 'Télécharger Muitra' },
   es: { solo: 'Para una persona', couples: 'Para parejas', roommates: 'Para compañeros de piso', explore: 'Muitra se adapta a tu hogar', exploreBody: 'Organízate a solas, reparte las tareas en pareja o coordina un piso compartido.', download: 'Descargar Muitra' },
 };
+const audienceIcons = { solo: '🧍', couples: '👫', roommates: '👥' };
 
 const metadata = {
   en: {
@@ -134,9 +135,10 @@ function audienceMain(page, lang) {
 }
 
 function addAudienceLinks(html, lang, page) {
-  const links = ['solo', 'couples', 'roommates'].map((kind) => `<a class="audience-card" href="${localPath(kind, lang)}"><span>${escapeHtml(labels[lang][kind])}</span><span aria-hidden="true">→</span></a>`).join('\n        ');
-  const section = `<section class="audience-section" aria-labelledby="audience-title"><div class="section-heading"><h2 id="audience-title">${escapeHtml(labels[lang].explore)}</h2><p>${escapeHtml(labels[lang].exploreBody)}</p></div><div class="audience-cards">${links}</div></section>`;
+  const links = ['solo', 'couples', 'roommates'].map((kind) => `<a class="audience-card" href="${localPath(kind, lang)}"><span class="audience-card-icon" aria-hidden="true">${audienceIcons[kind]}</span><span class="audience-card-label">${escapeHtml(labels[lang][kind])}</span><span class="audience-card-arrow" aria-hidden="true">→</span></a>`).join('\n        ');
+  const section = `<section class="audience-section${page === 'mission' ? ' audience-section-top' : ''}" aria-labelledby="audience-title"><div class="section-heading"><h2 id="audience-title">${escapeHtml(labels[lang].explore)}</h2><p>${escapeHtml(labels[lang].exploreBody)}</p></div><div class="audience-cards">${links}</div></section>`;
   if (page === 'home') return html.replace('    <!-- ===== Get the app ===== -->', `${section}\n    <!-- ===== Get the app ===== -->`);
+  if (page === 'mission') return html.replace('    <section class="values grid-2"', `    ${section}\n\n    <section class="values grid-2"`);
   return html.replace('  </main>', `    ${section}\n  </main>`);
 }
 
